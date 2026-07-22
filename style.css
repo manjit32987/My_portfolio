@@ -1300,97 +1300,129 @@ padding:8px 14px;
 }
 
 /* ==========================================================================
-   WALL OF FAME SECTION
+   COMPACT OVERLAPPING POLAROID PINBOARD (VIEWABLE IN ONE PAGE)
    ========================================================================== */
 .wall-fame-section {
-    margin-top: 120px;
-    padding-bottom: 80px;
+    margin-top: 80px;
+    padding-bottom: 40px;
 }
 
 .fame-subtitle {
     font-size: 1.05rem;
     color: #a0a0a0;
     margin-top: -30px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     max-width: 720px;
     line-height: 1.6;
 }
 
-.fame-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.fame-card {
+.polaroid-collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px 40px 10px;
     position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(112, 195, 76, 0.25);
-    background: #151515;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    perspective: 1000px;
 }
 
-.fame-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--accent-green);
-    box-shadow: 0 20px 45px rgba(112, 195, 76, 0.25);
-}
-
-.fame-img-box {
+.polaroid-item {
     position: relative;
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
+    margin: -10px -14px; /* Organic overlap effect */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                z-index 0.1s ease, 
+                box-shadow 0.4s ease;
+    cursor: pointer;
+    will-change: transform, z-index;
 }
 
-.fame-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.fame-card:hover .fame-img-box img {
-    transform: scale(1.08);
-}
-
-.fame-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 24px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
+.polaroid-frame {
+    background: #fcfcfc;
+    padding: 10px 10px 14px 10px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 175px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    transition: background 0.3s ease;
+    align-items: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.fame-category {
-    font-size: 0.72rem;
-    font-weight: 800;
-    color: var(--accent-green);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+.polaroid-frame img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 2px;
 }
 
-.fame-overlay h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 6px;
-    text-transform: uppercase;
+.polaroid-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
-.fame-overlay p {
-    font-size: 0.88rem;
-    color: #cfcfcf;
-    line-height: 1.4;
+/* Washi Tape Accent Strips */
+.tape-strip {
+    position: absolute;
+    width: 65px;
+    height: 20px;
+    background: rgba(245, 245, 245, 0.7);
+    border: 1px dashed rgba(170, 170, 170, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    opacity: 0.9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.tape-top-left {
+    top: -8px;
+    left: 10px;
+    transform: rotate(-14deg);
+}
+
+.tape-top-right {
+    top: -8px;
+    right: 10px;
+    transform: rotate(15deg);
+}
+
+.tape-top-center {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+}
+
+/* Overlapping Rotations & Layering */
+.polaroid-item:nth-child(6n+1) { transform: rotate(-8deg) translateY(4px); z-index: 2; }
+.polaroid-item:nth-child(6n+2) { transform: rotate(7deg) translateY(-8px); z-index: 4; }
+.polaroid-item:nth-child(6n+3) { transform: rotate(-11deg) translateY(6px); z-index: 1; }
+.polaroid-item:nth-child(6n+4) { transform: rotate(9deg) translateY(-4px); z-index: 5; }
+.polaroid-item:nth-child(6n+5) { transform: rotate(-5deg) translateY(10px); z-index: 3; }
+.polaroid-item:nth-child(6n+6) { transform: rotate(12deg) translateY(-6px); z-index: 6; }
+
+/* Interactive Hover Lift: Pops to top z-index and expands to 1.38x */
+.polaroid-item:hover {
+    transform: rotate(0deg) scale(1.38) translateY(-20px) !important;
+    z-index: 100 !important;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(112, 195, 76, 0.5);
+}
+
+.polaroid-item:hover .polaroid-frame {
+    border-color: var(--accent-green);
+    background: #ffffff;
 }
 
 /* ==========================================================================

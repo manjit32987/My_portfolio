@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Re-bind cursor hover for newly added elements
     if (window.innerWidth >= 900) {
-        document.querySelectorAll('.hover-target, .cert-card, .fame-card, .cert-filter-btn, .btn-cert-link, .footer-nav a').forEach(target => {
+        document.querySelectorAll('.hover-target, .cert-card, .polaroid-item, .fame-card, .cert-filter-btn, .btn-cert-link, .footer-nav a').forEach(target => {
             target.addEventListener('mouseenter', () => {
                 if (cursorDot) cursorDot.classList.add('cursor-hover');
                 if (cursorRing) cursorRing.classList.add('cursor-hover');
