@@ -278,6 +278,20 @@ header {
     border:none;
 }
 
+.project-video{
+    display:block;
+    width:100%;
+    height:300px;
+    background:#000;
+    object-fit:contain;
+}
+
+/* The original iframe used padding to create an aspect ratio. Local video has its
+   own height, so that padding must be removed to avoid an empty black area. */
+.video-container{
+    padding-bottom:0;
+}
+
 /* CONTENT */
 
 .project-info{
@@ -496,6 +510,12 @@ gap:30px;
 }
 
 .video-container iframe{
+
+height:250px;
+
+}
+
+.project-video{
 
 height:250px;
 
