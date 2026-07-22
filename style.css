@@ -59,6 +59,7 @@ header {
     text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s;
 }
 .nav-center a:hover { color: var(--accent-green); }
+.nav-center a.active-nav { color: var(--accent-green); }
 
 .btn-green {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -165,6 +166,50 @@ header {
 .exp-date { font-size: 0.9rem; color: var(--accent-green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 .exp-item p { color: #b0b0b0; line-height: 1.7; font-size: 1.05rem; }
 
+/* --- Education & Experience Timeline --- */
+.timeline-section { margin-top: 120px; }
+.timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+.timeline::before {
+    content: ""; position: absolute; top: 12px; bottom: 12px; left: 150px;
+    width: 2px; background: rgba(112, 195, 76, 0.45);
+}
+.timeline::after {
+    content: ""; position: absolute; top: 12px; bottom: 12px; left: 150px;
+    width: 2px; background: var(--accent-green); transform: scaleY(0);
+    transform-origin: top; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.timeline.is-active::after { transform: scaleY(1); }
+.timeline-item {
+    position: relative; display: grid; grid-template-columns: 125px 1fr;
+    gap: 50px; padding-bottom: 34px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-date {
+    color: var(--accent-green); font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 1px; text-align: right; padding-top: 23px;
+}
+.timeline-marker {
+    position: absolute; top: 25px; left: 143px; width: 16px; height: 16px;
+    background: var(--bg-dark); border: 3px solid var(--accent-green); border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(112, 195, 76, 0.08); z-index: 1;
+}
+.timeline-card {
+    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(112, 195, 76, 0.28);
+    position: relative; z-index: 1; border-radius: 10px; padding: 22px 26px; transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.timeline-card:hover, .timeline-card:focus-within {
+    transform: translateX(10px); background: rgba(112, 195, 76, 0.08); border-color: var(--accent-green);
+}
+.timeline-type {
+    display: inline-block; color: var(--accent-green); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 1px; margin-bottom: 8px;
+}
+.timeline-card h3 {
+    color: var(--text-light); font-family: var(--font-heading); font-size: 2rem;
+    line-height: 1.15; text-transform: uppercase; margin-bottom: 8px;
+}
+.timeline-card p { color: #b0b0b0; font-size: 1rem; line-height: 1.5; }
+
 /* --- Certificates / Bento Grid --- */
 .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
 .bento-box {
@@ -191,6 +236,13 @@ header {
     .project-row, .experience-row { flex-direction: column; text-align: left; gap: 30px; }
     .video-container, .experience-photo { padding-bottom: 56.25%; width: 100%; min-height: auto; transform: none !important; }
     .certificates-section { margin-top: 80px; }
+    .timeline-section { margin-top: 80px; }
+    .timeline::before { left: 8px; }
+    .timeline::after { left: 8px; }
+    .timeline-item { grid-template-columns: 1fr; gap: 10px; padding-left: 32px; }
+    .timeline-date { text-align: left; padding-top: 0; }
+    .timeline-marker { left: 1px; top: 4px; }
+    .timeline-card:hover, .timeline-card:focus-within { transform: translateX(4px); }
 }
 
 /* --- Social Links (Add to bottom of style.css) --- */

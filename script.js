@@ -96,4 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 6. Highlight the current section in the navigation.
+    const navLinks = [...document.querySelectorAll('.nav-center a')];
+    const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach(link => {
+                link.classList.toggle('active-nav', link.getAttribute('href') === `#${entry.target.id}`);
+            });
+        });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // 7. Draw the education and experience timeline as it enters view.
+    const timeline = document.querySelector('.timeline');
+    if (timeline) {
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+                timeline.classList.add('is-active');
+                observer.unobserve(timeline);
+            }
+        }, { threshold: 0.2 });
+        timelineObserver.observe(timeline);
+    }
 });
