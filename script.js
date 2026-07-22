@@ -1,34 +1,86 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Custom Cursor Logic
+    // 1. Custom Magnetic Dual-Ring Glassmorphism Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    const hoverTargets = document.querySelectorAll('a, button, .hover-target');
+    const cursorRing = document.querySelector('.cursor-ring');
 
-    if (window.innerWidth >= 900) {
+    if (window.innerWidth >= 900 && cursorDot && cursorRing) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+
         window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 400, fill: "forwards" });
+            // Precision dot tracks cursor instantly
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
         });
 
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => cursorOutline.classList.add('cursor-hover'));
-            target.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-hover'));
+        // Helper to detect if element under cursor is inside white section
+        function checkThemeSection() {
+            const el = document.elementFromPoint(mouseX, mouseY);
+            if (!el) return;
+            const isWhite = !!el.closest('.hero-section');
+            if (isWhite) {
+                cursorDot.classList.add('on-white-section');
+                cursorRing.classList.add('on-white-section');
+            } else {
+                cursorDot.classList.remove('on-white-section');
+                cursorRing.classList.remove('on-white-section');
+            }
+        }
+
+        // Fluid spring lerp animation frame loop
+        function animateCursor() {
+            ringX += (mouseX - ringX) * 0.18;
+            ringY += (mouseY - ringY) * 0.18;
+
+            cursorRing.style.left = `${ringX}px`;
+            cursorRing.style.top = `${ringY}px`;
+
+            checkThemeSection();
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Magnetic snap & expansion on hover
+        const setupHoverTargets = () => {
+            const hoverTargets = document.querySelectorAll('a, button, .hover-target, .cert-card, .btn-green, .social-icon, .nav-pill a, .cert-filter-btn, .btn-cert-link');
+
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => {
+                    cursorRing.classList.add('cursor-hover');
+                    cursorDot.classList.add('cursor-hover');
+                });
+
+                target.addEventListener('mouseleave', () => {
+                    cursorRing.classList.remove('cursor-hover');
+                    cursorDot.classList.remove('cursor-hover');
+                });
+            });
+        };
+        setupHoverTargets();
+
+        // Click squeeze & spring pulse on mouse down
+        window.addEventListener('mousedown', () => {
+            cursorRing.classList.add('cursor-active');
+            cursorDot.classList.add('cursor-active');
+        });
+
+        window.addEventListener('mouseup', () => {
+            cursorRing.classList.remove('cursor-active');
+            cursorDot.classList.remove('cursor-active');
         });
     }
 
     // 2. Scroll Reveals (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal-up');
     const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
-    
+
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -114,15 +166,155 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => sectionObserver.observe(section));
 
-    // 7. Draw the education and experience timeline as it enters view.
+    // 7. Fill the education and experience timeline as the visitor scrolls.
     const timeline = document.querySelector('.timeline');
     if (timeline) {
-        const timelineObserver = new IntersectionObserver((entries, observer) => {
-            if (entries[0].isIntersecting) {
-                timeline.classList.add('is-active');
-                observer.unobserve(timeline);
+        const timelineItems = [...timeline.querySelectorAll('.timeline-item')];
+        let isTimelineTicking = false;
+
+        const updateTimeline = () => {
+            const rect = timeline.getBoundingClientRect();
+            const triggerPoint = window.innerHeight * 0.7;
+            const progress = Math.max(0, Math.min(1, (triggerPoint - rect.top) / rect.height));
+
+            timeline.classList.add('is-active');
+            timeline.style.setProperty('--timeline-progress', progress);
+            timelineItems.forEach(item => {
+                item.classList.toggle('is-complete', item.getBoundingClientRect().top < triggerPoint);
+            });
+            isTimelineTicking = false;
+        };
+
+        const requestTimelineUpdate = () => {
+            if (!isTimelineTicking) {
+                window.requestAnimationFrame(updateTimeline);
+                isTimelineTicking = true;
             }
-        }, { threshold: 0.2 });
-        timelineObserver.observe(timeline);
+        };
+
+        window.addEventListener('scroll', requestTimelineUpdate, { passive: true });
+        window.addEventListener('resize', requestTimelineUpdate);
+        updateTimeline();
+    }
+
+    // 8. Certificate Category Filtering Logic
+    const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            certFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            certCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.classList.remove('hide-card');
+                } else {
+                    card.classList.add('hide-card');
+                }
+            });
+        });
+    });
+
+    // 9. Certificate Modal Lightbox
+    const certModal = document.getElementById('certModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalCloseIcon = document.querySelector('.cert-modal-close');
+    const modalBackdrop = document.querySelector('.cert-modal-backdrop');
+
+    const modalBadge = document.getElementById('modalBadge');
+    const modalDate = document.getElementById('modalDate');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIssuer = document.getElementById('modalIssuer');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalSkills = document.getElementById('modalSkills');
+
+    const openCertModal = (buttonEl) => {
+        if (!certModal) return;
+
+        const title = buttonEl.getAttribute('data-title') || 'Certificate';
+        const issuer = buttonEl.getAttribute('data-issuer') || '';
+        const date = buttonEl.getAttribute('data-date') || '';
+        const badge = buttonEl.getAttribute('data-badge') || 'VERIFIED';
+        const desc = buttonEl.getAttribute('data-desc') || '';
+        const skillsStr = buttonEl.getAttribute('data-skills') || '';
+
+        modalTitle.textContent = title;
+        modalIssuer.textContent = issuer;
+        modalDate.textContent = date;
+        modalBadge.textContent = badge;
+        modalDesc.textContent = desc;
+
+        // Populate skills chips
+        modalSkills.innerHTML = '';
+        if (skillsStr) {
+            skillsStr.split(',').forEach(skill => {
+                const chip = document.createElement('span');
+                chip.className = 'modal-skill-chip';
+                chip.textContent = skill.trim();
+                modalSkills.appendChild(chip);
+            });
+        }
+
+        certModal.classList.add('active');
+        certModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeCertModal = () => {
+        if (!certModal) return;
+        certModal.classList.remove('active');
+        certModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    // Attach click listeners to all detail buttons and card containers
+    document.querySelectorAll('.btn-cert-detail').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openCertModal(btn);
+        });
+    });
+
+    document.querySelectorAll('.btn-cert-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
+    document.querySelectorAll('.cert-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.btn-cert-link')) return;
+            const btn = card.querySelector('.btn-cert-detail');
+            if (btn) openCertModal(btn);
+        });
+    });
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeCertModal);
+    if (modalCloseIcon) modalCloseIcon.addEventListener('click', closeCertModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeCertModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
+            closeCertModal();
+        }
+    });
+
+    // Re-bind cursor hover for newly added elements
+    if (window.innerWidth >= 900) {
+        document.querySelectorAll('.hover-target, .cert-card, .fame-card, .cert-filter-btn, .btn-cert-link, .footer-nav a').forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                if (cursorDot) cursorDot.classList.add('cursor-hover');
+                if (cursorRing) cursorRing.classList.add('cursor-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                if (cursorDot) cursorDot.classList.remove('cursor-hover');
+                if (cursorRing) cursorRing.classList.remove('cursor-hover');
+            });
+        });
     }
 });
+
