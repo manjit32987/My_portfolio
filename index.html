@@ -3,34 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manjit Chakraborty | CV &amp; Portfolio</title>
+    <title>Manjit Chakraborty | Portfolio &amp; Credentials</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Synchronous theme initialization to prevent flash
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
 
     <!-- Site Header / Navbar -->
     <header class="site-header">
         <div class="nav-container">
-            <a href="#about" class="nav-brand">
+            <a href="#projects" class="nav-brand">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#70C34C" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 Manjit Chakraborty
             </a>
 
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#certificates" class="nav-link active">CV / Certificates</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#wall-of-fame" class="nav-link">Milestones</a></li>
+                    <li><a href="#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Education &amp; Experience</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#wall-of-fame" class="nav-link">Wall of Fame</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
+                <button id="themeToggle" class="btn-theme-toggle" aria-label="Toggle Night/Light Mode" title="Toggle Theme">
+                    <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
                 <a href="Manjit_Chakraborty_Resume.pdf" download class="btn-nav-resume">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     <span>Resume</span>
@@ -92,20 +119,62 @@
         <!-- Right Main Academic Content -->
         <main class="main-content">
 
-            <!-- Title & Brief Header -->
-            <section id="about" class="cv-section">
-                <h1 class="page-title">Curriculum Vitae</h1>
-                <p class="page-intro">
-                    Electronics and Communication Engineer specializing in Unmanned Aerial Vehicles (UAVs), Embedded Systems, and Analog Circuit Design. Winner at MeitY TIDE 2.0 (IIM Calcutta), All India Rank 12 in the NIDAR National Drone Challenge, and MoE YUKTI Innovation Challenge Finalist.
-                </p>
+            <!-- 1. Featured Hardware Project (First) -->
+            <section id="projects" class="cv-section">
+                <h2 class="section-heading">
+                    Projects
+                    <span class="section-heading-badge">Hardware &amp; UAV</span>
+                </h2>
+                
+                <div class="project-card-academic">
+                    <div class="project-header">
+                        <h3 class="project-title">Multifunction Analog Function Generator</h3>
+                        <span class="project-date">3rd Year B.Tech (ECE) &bull; 2026</span>
+                    </div>
+
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Designed and developed an analog function generator capable of producing stable <strong>Sine</strong>, <strong>Square</strong>, and <strong>Triangle</strong> waveforms with adjustable frequency and amplitude controls. Encompasses analog circuit modeling, custom PCB layout in Fusion 360, manual PCB etching and component soldering, calibration, and oscilloscope signal verification.
+                    </p>
+
+                    <!-- Responsive Video Demonstration -->
+                    <video class="project-video-academic" autoplay muted loop playsinline controls preload="metadata">
+                        <source src="function-generator.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video playback.
+                    </video>
+
+                    <div class="project-tags">
+                        <span class="project-tag">NE555 Timer</span>
+                        <span class="project-tag">Fusion 360</span>
+                        <span class="project-tag">Analog Electronics</span>
+                        <span class="project-tag">PCB Fabrication</span>
+                        <span class="project-tag">Oscilloscope Testing</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/manjit32987/function-generator" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.08 1.54 1.08.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.26 9.26 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.58 5.07.36.32.68.93.68 1.88 0 1.36-.01 2.46-.01 2.8 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <a href="Function_Generator_Report.pdf" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>Project Report (PDF)</span>
+                        </a>
+                    </div>
+                </div>
             </section>
 
-            <!-- Education -->
-            <section id="education" class="cv-section">
+            <!-- 2. Education & Experience (Second) -->
+            <section id="experience" class="cv-section">
                 <h2 class="section-heading">
-                    Education
-                    <span class="section-heading-badge">B.Tech (ECE)</span>
+                    Education &amp; Experience
+                    <span class="section-heading-badge">Academic &amp; Industry</span>
                 </h2>
+
+                <!-- Education Subsection -->
+                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    Education
+                </h3>
                 <ul class="academic-list">
                     <li class="academic-item">
                         <div class="item-header">B.Tech in Electronics &amp; Communication Engineering &bull; 2023 &ndash; 2027 (Expected)</div>
@@ -115,11 +184,12 @@
                         </ul>
                     </li>
                 </ul>
-            </section>
 
-            <!-- Work Experience & Internships -->
-            <section id="experience" class="cv-section">
-                <h2 class="section-heading">Work Experience &amp; Internships</h2>
+                <!-- Experience Subsection -->
+                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    Work Experience &amp; Internships
+                </h3>
                 <ul class="academic-list">
                     
                     <!-- Internship 1 -->
@@ -155,10 +225,10 @@
                 </ul>
             </section>
 
-            <!-- Honors, Awards & Certificates (All 21 in Academic Layout) -->
+            <!-- 3. Certificates & Honors (Third) -->
             <section id="certificates" class="cv-section">
                 <h2 class="section-heading">
-                    Honors &amp; Awards (Certifications)
+                    Certificates
                     <span class="section-heading-badge">21 Verified Credentials</span>
                 </h2>
 
@@ -460,51 +530,13 @@
                 <p id="noCertMatch" class="no-cert-match">No certificates match your query. Try another keyword or reset the filter.</p>
             </section>
 
-            <!-- Featured Hardware Project -->
-            <section id="projects" class="cv-section">
-                <h2 class="section-heading">Featured Hardware Project</h2>
-                
-                <div class="project-card-academic">
-                    <div class="project-header">
-                        <h3 class="project-title">Multifunction Analog Function Generator</h3>
-                        <span class="project-date">3rd Year B.Tech (ECE) &bull; 2026</span>
-                    </div>
-
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Designed and developed an analog function generator capable of producing stable <strong>Sine</strong>, <strong>Square</strong>, and <strong>Triangle</strong> waveforms with adjustable frequency and amplitude controls. Encompasses analog circuit modeling, custom PCB layout in Fusion 360, manual PCB etching and component soldering, calibration, and oscilloscope signal verification.
-                    </p>
-
-                    <!-- Responsive Video Demonstration -->
-                    <video class="project-video-academic" autoplay muted loop playsinline controls preload="metadata">
-                        <source src="function-generator.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video playback.
-                    </video>
-
-                    <div class="project-tags">
-                        <span class="project-tag">NE555 Timer</span>
-                        <span class="project-tag">Fusion 360</span>
-                        <span class="project-tag">Analog Electronics</span>
-                        <span class="project-tag">PCB Fabrication</span>
-                        <span class="project-tag">Oscilloscope Testing</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://github.com/manjit32987/function-generator" target="_blank" rel="noopener noreferrer" class="btn-project-link">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.08 1.54 1.08.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.26 9.26 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.58 5.07.36.32.68.93.68 1.88 0 1.36-.01 2.46-.01 2.8 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
-                            <span>View Source on GitHub</span>
-                        </a>
-                        <a href="Function_Generator_Report.pdf" target="_blank" rel="noopener noreferrer" class="btn-project-link">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                            <span>Project Report (PDF)</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Milestones / Wall of Fame -->
+            <!-- 4. Wall of Fame (Fourth) -->
             <section id="wall-of-fame" class="cv-section">
-                <h2 class="section-heading">Milestones &amp; Field Archive</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                <h2 class="section-heading">
+                    Wall of Fame
+                    <span class="section-heading-badge">22 Milestone Moments</span>
+                </h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
                     A photographic record of 22 milestones from national hackathons, research conventions, and flight arenas.
                 </p>
 
@@ -610,7 +642,7 @@
                 &copy; 2026 Manjit Chakraborty &bull; Tripura Institute of Technology (TIT)
             </div>
             <div>
-                <a href="#about">Back to top &uarr;</a>
+                <a href="#projects">Back to top &uarr;</a>
             </div>
         </div>
     </footer>

@@ -1,6 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Smooth Scrolling for Navigation Links with Navbar Offset
+    // 1. Theme Toggle (Night / Light Mode)
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // 2. Smooth Scrolling for Navigation Links with Navbar Offset
     const navLinks = document.querySelectorAll('.nav-link');
     const headerHeight = document.querySelector('.site-header')?.offsetHeight || 60;
 
@@ -21,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. ScrollSpy / Highlight Active Section in Navbar
+    // 3. ScrollSpy / Highlight Active Section in Navbar
     const sections = Array.from(navLinks)
         .map(link => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
@@ -29,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sections.length > 0) {
         const observerOptions = {
             root: null,
-            rootMargin: '-30% 0px -60% 0px',
+            rootMargin: '-25% 0px -65% 0px',
             threshold: 0
         };
 
@@ -48,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(section => sectionObserver.observe(section));
     }
 
-    // 3. Academic CV Certificates Filtering & Live Search
+    // 4. Academic CV Certificates Filtering & Live Search
     const filterBtns = document.querySelectorAll('.cv-filter-btn');
     const certList = document.getElementById('cvCertList');
     const certItems = certList ? certList.querySelectorAll('.academic-item') : [];

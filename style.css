@@ -1,6 +1,6 @@
 /* ==========================================================================
    ACADEMIC PAGES DESIGN SYSTEM (CV & PORTFOLIO)
-   Inspired by AcademicPages / Jekyll Academic Theme
+   Supports Dark (Night) and Light Mode
    ========================================================================== */
 
 :root {
@@ -15,8 +15,24 @@
     --text-muted: #7e848e;
     --accent-blue: #58a6ff;
     --accent-green: #70C34C;
+    --input-bg: #18191b;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+[data-theme="light"] {
+    --bg-body: #f8f9fa;
+    --bg-navbar: #ffffff;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f1f3f5;
+    --border-color: rgba(0, 0, 0, 0.12);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --text-primary: #1a1d20;
+    --text-secondary: #4a5058;
+    --text-muted: #6c757d;
+    --accent-blue: #0969da;
+    --accent-green: #2da44e;
+    --input-bg: #ffffff;
 }
 
 * {
@@ -27,7 +43,7 @@
 
 html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
@@ -50,6 +66,7 @@ body {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(8px);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .nav-container {
@@ -65,12 +82,13 @@ body {
 .nav-brand {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -0.2px;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: color 0.2s ease;
 }
 
 .nav-brand:hover {
@@ -95,11 +113,11 @@ body {
 }
 
 .nav-link:hover {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .nav-link.active {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -110,21 +128,59 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--text-primary);
     border-radius: 1px;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+}
+
+/* Theme Toggle Button (Night/Light Mode) */
+.btn-theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    background: var(--bg-surface-hover);
+}
+
+.theme-icon-sun {
+    display: none;
+}
+
+.theme-icon-moon {
+    display: block;
+}
+
+[data-theme="light"] .theme-icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .theme-icon-sun {
+    display: block;
+    color: #d97706;
 }
 
 .btn-nav-resume {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
-    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.82rem;
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 6px;
@@ -136,8 +192,8 @@ body {
 }
 
 .btn-nav-resume:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    background: var(--bg-surface-hover);
+    border-color: var(--text-primary);
 }
 
 /* ==========================================================================
@@ -169,9 +225,9 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    background-color: #1a1a1a;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    background-color: var(--bg-surface);
 }
 
 .sidebar-avatar {
@@ -184,9 +240,9 @@ body {
 .sidebar-name {
     font-size: 1.45rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     line-height: 1.25;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     letter-spacing: -0.3px;
 }
 
@@ -236,7 +292,7 @@ body {
 }
 
 .sidebar-item a:hover {
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: underline;
 }
 
@@ -269,35 +325,20 @@ body {
 }
 
 /* ==========================================================================
-   MAIN CONTENT AREA (ACADEMIC CV STYLE)
+   MAIN CONTENT AREA
    ========================================================================== */
 .main-content {
     min-width: 0;
 }
 
-.page-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
-}
-
-.page-intro {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 32px;
-}
-
 .cv-section {
-    margin-bottom: 44px;
+    margin-bottom: 48px;
 }
 
 .section-heading {
     font-size: 1.55rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 8px;
     margin-bottom: 22px;
@@ -335,7 +376,7 @@ body {
 .item-header {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 4px;
 }
 
@@ -440,6 +481,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .filter-pills-row {
@@ -450,7 +492,7 @@ body {
 
 .cv-filter-btn {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
     padding: 5px 12px;
     border-radius: 14px;
@@ -461,14 +503,14 @@ body {
 }
 
 .cv-filter-btn:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
 }
 
 .cv-filter-btn.active {
-    background: #fff;
-    color: #111;
-    border-color: #fff;
+    background: var(--text-primary);
+    color: var(--bg-body);
+    border-color: var(--text-primary);
 }
 
 .search-input-row {
@@ -479,9 +521,9 @@ body {
 
 .cv-search-input {
     flex: 1;
-    background: #18191b;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #fff;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 0.85rem;
@@ -496,7 +538,7 @@ body {
 
 .btn-master-drive {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.8rem;
     font-weight: 600;
@@ -511,8 +553,8 @@ body {
 }
 
 .btn-master-drive:hover {
-    color: #fff;
-    border-color: #fff;
+    color: var(--text-primary);
+    border-color: var(--text-primary);
 }
 
 .academic-item.hide-item {
@@ -539,6 +581,7 @@ body {
     border-radius: 10px;
     padding: 24px;
     margin-top: 12px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .project-header {
@@ -553,7 +596,7 @@ body {
 .project-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .project-date {
@@ -578,7 +621,7 @@ body {
 
 .project-tag {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.75rem;
     padding: 3px 8px;
@@ -596,9 +639,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: var(--bg-surface-hover);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
     padding: 7px 14px;
     border-radius: 6px;
     font-size: 0.82rem;
@@ -608,7 +651,7 @@ body {
 }
 
 .btn-project-link:hover {
-    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--text-primary);
 }
 
 /* ==========================================================================
@@ -631,7 +674,7 @@ body {
 
 .fame-item-academic:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: var(--text-primary);
 }
 
 .fame-thumb-wrapper {
@@ -669,6 +712,7 @@ body {
     background-color: var(--bg-navbar);
     padding: 28px 24px;
     margin-top: 60px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .footer-inner {
@@ -689,7 +733,7 @@ body {
 }
 
 .footer-inner a:hover {
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: underline;
 }
 
