@@ -197,27 +197,53 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTimeline();
     }
 
-    // 8. Certificate Category Filtering Logic
+    // 8. Certificate Category Filtering & Real-time Search Logic
     const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
+    const certRows = document.querySelectorAll('.cert-row');
+    const certSearchInput = document.getElementById('certSearch');
+    const certEmptyMsg = document.getElementById('certEmptyMsg');
+
+    let currentCategoryFilter = 'all';
+    let currentSearchTerm = '';
+
+    const filterCertificates = () => {
+        let visibleCount = 0;
+
+        certRows.forEach(row => {
+            const category = row.getAttribute('data-category') || '';
+            const searchData = (row.getAttribute('data-keywords') || '' + ' ' + row.innerText).toLowerCase();
+
+            const matchesCategory = (currentCategoryFilter === 'all' || category === currentCategoryFilter);
+            const matchesSearch = !currentSearchTerm || searchData.includes(currentSearchTerm);
+
+            if (matchesCategory && matchesSearch) {
+                row.classList.remove('hide-row');
+                visibleCount++;
+            } else {
+                row.classList.add('hide-row');
+            }
+        });
+
+        if (certEmptyMsg) {
+            certEmptyMsg.classList.toggle('active', visibleCount === 0);
+        }
+    };
 
     certFilterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             certFilterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            certCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filterValue === 'all' || category === filterValue) {
-                    card.classList.remove('hide-card');
-                } else {
-                    card.classList.add('hide-card');
-                }
-            });
+            currentCategoryFilter = btn.getAttribute('data-filter') || 'all';
+            filterCertificates();
         });
     });
+
+    if (certSearchInput) {
+        certSearchInput.addEventListener('input', (e) => {
+            currentSearchTerm = e.target.value.trim().toLowerCase();
+            filterCertificates();
+        });
+    }
 
     // 9. Certificate Modal Lightbox
     const certModal = document.getElementById('certModal');
@@ -305,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Re-bind cursor hover for newly added elements
     if (window.innerWidth >= 900) {
-        document.querySelectorAll('.hover-target, .cert-card, .polaroid-item, .fame-card, .cert-filter-btn, .btn-cert-link, .footer-nav a').forEach(target => {
+        document.querySelectorAll('.hover-target, .cert-card, .cert-row, .btn-cert-direct, .btn-folder-link, .polaroid-item, .fame-card, .cert-filter-btn, .btn-cert-link, .footer-nav a').forEach(target => {
             target.addEventListener('mouseenter', () => {
                 if (cursorDot) cursorDot.classList.add('cursor-hover');
                 if (cursorRing) cursorRing.classList.add('cursor-hover');
