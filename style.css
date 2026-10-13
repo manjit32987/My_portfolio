@@ -198,10 +198,10 @@ img, video {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--bg-card);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-light);
+    background: rgba(18, 20, 28, 0.82) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: var(--radius-full);
     padding: 6px 8px 6px 12px;
     box-shadow: var(--shadow-md);
@@ -249,7 +249,7 @@ img, video {
 .dock-link {
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: #94a3b8 !important;
     padding: 8px 16px;
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
@@ -263,8 +263,8 @@ img, video {
 }
 
 .dock-link.active {
-    color: var(--text-primary);
-    background: var(--bg-pill);
+    color: #f8fafc !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     font-weight: 600;
 }
 
@@ -613,24 +613,11 @@ img, video {
             transparent 18%, 
             transparent 74%, 
             rgba(11, 12, 16, 0.95) 94%, 
-            var(--bg-base) 100%);
+            #0b0c10 100%);
     pointer-events: none;
 }
 
-[data-theme="light"] .hero-overlay-gradient {
-    background: 
-        linear-gradient(180deg, 
-            rgba(15, 23, 42, 0.35) 0%, 
-            rgba(15, 23, 42, 0.06) 20%, 
-            rgba(15, 23, 42, 0.15) 55%, 
-            rgba(15, 23, 42, 0.35) 80%, 
-            rgba(248, 250, 252, 0.75) 100%),
-        linear-gradient(90deg, 
-            rgba(15, 23, 42, 0.5) 0%, 
-            rgba(15, 23, 42, 0.18) 50%, 
-            rgba(15, 23, 42, 0.04) 100%);
-    pointer-events: none;
-}
+
 
 .hero-content-wrapper {
     position: relative;
@@ -653,69 +640,6 @@ img, video {
     transition: background var(--transition-smooth), backdrop-filter var(--transition-smooth), border var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-/* Bright Mode Glassmorphism Touch */
-[data-theme="light"] .hero-direct-content {
-    background: rgba(255, 255, 255, 0.72) !important;
-    backdrop-filter: blur(28px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.85) !important;
-    box-shadow: 
-        0 20px 50px rgba(15, 23, 42, 0.15),
-        0 2px 6px rgba(0, 0, 0, 0.04),
-        inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-    border-radius: var(--radius-xl);
-    padding: 32px 36px;
-}
-
-[data-theme="light"] .hero-eyebrow-text {
-    color: #468a28;
-    text-shadow: none;
-    font-weight: 800;
-}
-
-[data-theme="light"] .hero-eyebrow-text::before {
-    background: var(--accent-gradient);
-    box-shadow: 0 0 8px rgba(109, 179, 73, 0.4);
-}
-
-[data-theme="light"] .hero-headline {
-    color: #0f172a !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
-}
-
-[data-theme="light"] .hero-role-title {
-    color: #3f7c24;
-    text-shadow: none;
-    font-weight: 700;
-}
-
-[data-theme="light"] .hero-about-text {
-    color: #334155;
-    text-shadow: none;
-    font-weight: 500;
-}
-
-[data-theme="light"] .hero-action-buttons .btn-primary {
-    background: var(--accent-gradient);
-    color: #ffffff;
-    box-shadow: 0 6px 20px rgba(109, 179, 73, 0.35);
-}
-
-[data-theme="light"] .hero-action-buttons .btn-secondary {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(15, 23, 42, 0.14);
-    color: #0f172a;
-    text-shadow: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .hero-action-buttons .btn-secondary:hover {
-    background: #ffffff;
-    border-color: rgba(109, 179, 73, 0.4);
-    color: #468a28;
-}
 
 @keyframes heroDirectAppear {
     from { 
@@ -2327,60 +2251,8 @@ img, video {
         text-align: left;
     }
 
-    /* Mobile Glassmorphic Card Touch for Light Theme */
-    [data-theme="light"] .hero-direct-content {
-        background: rgba(255, 255, 255, 0.82) !important;
-        backdrop-filter: blur(24px) saturate(190%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-        border: 1px solid rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 
-            0 16px 40px rgba(15, 23, 42, 0.16),
-            0 2px 8px rgba(0, 0, 0, 0.04),
-            inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-        border-radius: 20px !important;
-        padding: 20px 18px !important;
-        margin-bottom: 6px;
-    }
 
-    [data-theme="light"] .hero-headline {
-        color: #0f172a !important;
-        text-shadow: none !important;
-    }
-
-    [data-theme="light"] .hero-role-title {
-        color: #3f7c24 !important;
-        text-shadow: none !important;
-        font-weight: 700;
-    }
-
-    [data-theme="light"] .hero-about-text {
-        color: #334155 !important;
-        text-shadow: none !important;
-        font-weight: 500;
-    }
-
-    [data-theme="light"] .hero-action-buttons .btn-primary {
-        background: var(--accent-gradient) !important;
-        color: #ffffff !important;
-        box-shadow: 0 8px 24px rgba(109, 179, 73, 0.35) !important;
-    }
-
-    [data-theme="light"] .hero-action-buttons .btn-secondary {
-        background: rgba(255, 255, 255, 0.9) !important;
-        border: 1px solid rgba(203, 213, 225, 0.9) !important;
-        color: #0f172a !important;
-        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06) !important;
-    }
-
-    /* Keep Dark Mode direct typography clean & untouched */
-    [data-theme="dark"] .hero-direct-content {
-        background: transparent !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-    }
+    
 
     .hero-eyebrow-text {
         font-size: 0.88rem;
@@ -2457,19 +2329,7 @@ img, video {
                 rgba(11, 12, 16, 0.15) 100%);
     }
 
-    [data-theme="light"] .hero-overlay-gradient {
-        background: 
-            linear-gradient(180deg, 
-                rgba(15, 23, 42, 0.35) 0%, 
-                transparent 15%, 
-                transparent 45%, 
-                rgba(15, 23, 42, 0.20) 75%, 
-                rgba(248, 250, 252, 0.55) 100%),
-            linear-gradient(90deg, 
-                rgba(15, 23, 42, 0.28) 0%, 
-                transparent 60%, 
-                rgba(15, 23, 42, 0.05) 100%) !important;
-    }
+    
 
     .hero-scroll-cue {
         display: none;
@@ -2521,10 +2381,7 @@ img, video {
         transform: scale(1.1) translateY(-6%);
     }
 
-    [data-theme="light"] .hero-direct-content {
-        padding: 18px 16px !important;
-        border-radius: 18px !important;
-    }
+    
 
     .hero-headline {
         font-size: 2rem;
