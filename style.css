@@ -2235,21 +2235,122 @@ img, video {
     .hero-landing-section {
         min-height: 100vh;
         min-height: 100dvh;
-        padding-top: 100px;
-        padding-bottom: 50px;
+        display: flex;
+        align-items: flex-end;
+        padding-top: 80px;
+        padding-bottom: 28px;
+        position: relative;
     }
 
     .hero-backdrop-img {
-        object-position: 52% 20%;
+        object-position: 51.6% 12%;
+    }
+
+    .hero-content-wrapper {
+        width: 100%;
+        padding-bottom: 6px;
+        position: relative;
+        z-index: 2;
     }
 
     .hero-direct-content {
         max-width: 100%;
         padding: 0;
+        text-align: left;
+    }
+
+    .hero-eyebrow-text {
+        font-size: 0.88rem;
+        margin-bottom: 6px;
+        gap: 8px;
+    }
+
+    .hero-eyebrow-text::before {
+        width: 20px;
+        height: 2.5px;
     }
 
     .hero-headline {
-        font-size: clamp(2.3rem, 9vw, 3.2rem);
+        font-size: clamp(2rem, 8vw, 2.7rem);
+        line-height: 1.08;
+        margin-bottom: 6px;
+    }
+
+    .hero-role-title {
+        font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+        margin-bottom: 8px;
+    }
+
+    .hero-about-text {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        max-width: 100%;
+        margin-bottom: 16px;
+        color: #e2e8f0;
+    }
+
+    .hero-action-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
+    .hero-action-buttons .btn-primary {
+        flex: 1.2;
+        padding: 12px 14px;
+        font-size: 0.86rem;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .hero-action-buttons .btn-secondary {
+        flex: 1;
+        padding: 12px 14px;
+        font-size: 0.86rem;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .hero-btn-extra {
+        display: none !important;
+    }
+
+    .hero-overlay-gradient {
+        background: 
+            linear-gradient(180deg, 
+                rgba(11, 12, 16, 0.35) 0%, 
+                transparent 15%, 
+                transparent 40%, 
+                rgba(11, 12, 16, 0.72) 56%, 
+                rgba(11, 12, 16, 0.96) 78%, 
+                var(--bg-base) 100%),
+            linear-gradient(90deg, 
+                rgba(11, 12, 16, 0.8) 0%, 
+                rgba(11, 12, 16, 0.35) 60%, 
+                rgba(11, 12, 16, 0.15) 100%);
+    }
+
+    [data-theme="light"] .hero-overlay-gradient {
+        background: 
+            linear-gradient(180deg, 
+                rgba(15, 23, 42, 0.35) 0%, 
+                transparent 15%, 
+                transparent 40%, 
+                rgba(15, 23, 42, 0.75) 56%, 
+                rgba(248, 250, 252, 0.98) 78%, 
+                var(--bg-base) 100%),
+            linear-gradient(90deg, 
+                rgba(15, 23, 42, 0.8) 0%, 
+                rgba(15, 23, 42, 0.35) 60%, 
+                rgba(15, 23, 42, 0.15) 100%);
+    }
+
+    .hero-scroll-cue {
+        display: none;
     }
 
     .dock-menu {
@@ -2289,21 +2390,26 @@ img, video {
 
 @media (max-width: 480px) {
     .hero-landing-section {
-        padding-top: 85px;
-        padding-bottom: 30px;
+        padding-top: 75px;
+        padding-bottom: 22px;
+    }
+
+    .hero-backdrop-img {
+        object-position: 51.6% 10%;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
     }
 
     .hero-action-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
+        gap: 8px;
     }
 
     .hero-action-buttons .btn-primary,
     .hero-action-buttons .btn-secondary {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
+        font-size: 0.82rem;
+        padding: 11px 10px;
     }
 
     .btn-resume-dock {
