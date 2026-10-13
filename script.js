@@ -316,6 +316,83 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================================================================
+       7B. CERTIFICATE IN-WEBSITE LIGHTBOX MODAL (Enlarge, Zero Redirect)
+       ========================================================================== */
+    const certModal = document.getElementById('certModal');
+    const certModalClose = document.getElementById('certModalClose');
+    const certModalDismissBtn = document.getElementById('certModalDismissBtn');
+    const certModalBackdrop = document.getElementById('certModalBackdrop');
+    const certModalImg = document.getElementById('certModalImg');
+    const certModalTitle = document.getElementById('certModalTitle');
+    const certModalIssuer = document.getElementById('certModalIssuer');
+    const certModalDesc = document.getElementById('certModalDesc');
+    const certModalBadge = document.getElementById('certModalBadge');
+    const certModalYear = document.getElementById('certModalYear');
+    const certModalDriveBtn = document.getElementById('certModalDriveBtn');
+
+    function openCertModal(card) {
+        if (!certModal) return;
+        const img = card.getAttribute('data-cert-img');
+        const title = card.getAttribute('data-cert-title') || card.querySelector('.cert-title')?.textContent || '';
+        const issuer = card.getAttribute('data-cert-issuer') || card.querySelector('.cert-issuer')?.textContent || '';
+        const year = card.getAttribute('data-cert-year') || card.querySelector('.cert-year')?.textContent || '';
+        const badge = card.getAttribute('data-cert-badge') || card.querySelector('.cert-badge')?.textContent || '';
+        const badgeCls = card.getAttribute('data-cert-badge-cls') || 'badge-blue';
+        const driveUrl = card.getAttribute('data-cert-drive') || '#';
+        const desc = card.querySelector('.cert-description')?.textContent || '';
+
+        if (certModalImg) certModalImg.src = img;
+        if (certModalTitle) certModalTitle.textContent = title;
+        if (certModalIssuer) certModalIssuer.textContent = issuer;
+        if (certModalDesc) certModalDesc.textContent = desc;
+        if (certModalYear) certModalYear.textContent = year;
+        if (certModalBadge) {
+            certModalBadge.textContent = badge;
+            certModalBadge.className = `cert-badge ${badgeCls}`;
+        }
+        if (certModalDriveBtn) certModalDriveBtn.href = driveUrl;
+
+        certModal.classList.add('active');
+        certModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+        if (!certModal) return;
+        certModal.classList.remove('active');
+        certModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (!certModal.classList.contains('active') && certModalImg) {
+                certModalImg.src = '';
+            }
+        }, 300);
+    }
+
+    document.querySelectorAll('.cert-row-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            openCertModal(card);
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openCertModal(card);
+            }
+        });
+    });
+
+    if (certModalClose) certModalClose.addEventListener('click', closeCertModal);
+    if (certModalDismissBtn) certModalDismissBtn.addEventListener('click', closeCertModal);
+    if (certModalBackdrop) certModalBackdrop.addEventListener('click', closeCertModal);
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
+            closeCertModal();
+        }
+    });
+
+    /* ==========================================================================
        8. WALL OF FAME LIGHTBOX MODAL
        ========================================================================== */
     const lightboxModal = document.getElementById('lightboxModal');
