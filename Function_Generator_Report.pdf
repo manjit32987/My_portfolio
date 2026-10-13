@@ -1,0 +1,88 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+      /F2 5 0 R
+    >>
+  >>
+  /Contents 6 0 R
+>>
+endobj
+4 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+  /Length 1767
+>>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(PROJECT REPORT: ANALOG FUNCTION GENERATOR) Tj
+/F2 11 Tf
+ET BT /F2 10 Tf 50 710 Td (Hardware Design, Schematic Analysis & Oscilloscope Verification Report) Tj
+ET BT /F2 10 Tf 50 695 Td (Author: Manjit Chakraborty | Tripura Institute of Technology \(TIT\)) Tj
+ET BT /F1 14 Tf 50 670 Td (1. EXECUTIVE SUMMARY) Tj /F2 10 Tf
+ET BT /F2 10 Tf 50 648 Td (This report documents the end-to-end design, simulation, breadboard prototyping, and custom PCB) Tj
+ET BT /F2 10 Tf 50 633 Td (fabrication of a precision Multifunction Analog Function Generator supporting Sine, Triangle, and) Tj
+ET BT /F2 10 Tf 50 618 Td (Square waveforms from 10 Hz to 100 kHz with adjustable duty cycle and variable amplitude output.) Tj
+ET BT /F1 14 Tf 50 593 Td (2. HARDWARE ARCHITECTURE) Tj /F2 10 Tf
+ET BT /F2 10 Tf 50 571 Td (* Core Generator: ICL8038 / XR2206 monolithic waveform generator IC with dual-rail op-amp buffers) Tj
+ET BT /F2 10 Tf 50 556 Td (* Power Regulation: Dual +/- 12V low-noise linear regulation \(LM7812 / LM7912\) with transient filtration) Tj
+ET BT /F2 10 Tf 50 541 Td (* Output Stage: High slew-rate operational amplifiers with 50-ohm output impedance match) Tj
+ET BT /F1 14 Tf 50 516 Td (3. VERIFICATION & MEASUREMENTS) Tj /F2 10 Tf
+ET BT /F2 10 Tf 50 494 Td (* Total Harmonic Distortion \(THD\) on sine output: < 1.2% measured with digital storage oscilloscope) Tj
+ET BT /F2 10 Tf 50 479 Td (* Square wave rise/fall time: < 22 nanoseconds into 50-ohm test load) Tj
+ET BT /F2 10 Tf 50 464 Td (* Amplitude range: 0.1 Vpp to 10.0 Vpp continuously adjustable) Tj
+ET BT /F1 14 Tf 50 439 Td (4. CONCLUSION) Tj /F2 10 Tf
+ET BT /F2 10 Tf 50 417 Td (The hardware meets all target electrical specifications and operates stably under continuous load.) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000000348 00000 n 
+0000000425 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+500
+%%EOF

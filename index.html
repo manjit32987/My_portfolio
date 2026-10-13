@@ -2,14 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manjit Chakraborty | Portfolio &amp; Credentials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Manjit Chakraborty | Electronics &amp; Communication Engineer &bull; UAVs, Robotics &amp; Embedded Systems</title>
+    <meta name="description" content="Portfolio of Manjit Chakraborty — Electronics &amp; Communication Engineer specializing in autonomous UAVs, embedded systems, custom PCB design, and robotics. Explore projects, certifications, and achievements.">
+    <meta name="keywords" content="Manjit Chakraborty, Electronics Engineer, UAV Autopilot, Embedded Systems, PCB Design, Robotics, Drone Technology, Agartala, TIT">
+    <meta name="author" content="Manjit Chakraborty">
+    <meta name="theme-color" content="#0b0c10">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="Manjit Chakraborty | Electronics &amp; Communication Engineer">
+    <meta property="og:description" content="Autonomous UAVs, custom analog &amp; digital PCB design, robotics, and embedded systems.">
+    <meta property="og:image" content="profile.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manjit Chakraborty | Electronics &amp; Communication Engineer">
+    <meta name="twitter:description" content="Autonomous UAVs, custom analog &amp; digital PCB design, robotics, and embedded systems.">
+    <meta name="twitter:image" content="profile.png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Anti-flash Theme Initialization -->
     <script>
-        // Synchronous theme initialization to prevent flash
         (function() {
             try {
                 const savedTheme = localStorage.getItem('theme');
@@ -24,633 +46,1298 @@
 </head>
 <body>
 
-    <!-- Site Header / Navbar -->
+    <!-- ==========================================================================
+         1. FLOATING NAVIGATION BAR (awrs.me Dock Style)
+         ========================================================================== -->
     <header class="site-header">
-        <div class="nav-container">
-            <a href="#projects" class="nav-brand">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#70C34C" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                Manjit Chakraborty
+        <nav class="dock-nav" aria-label="Main Navigation">
+            <!-- Clickable Logo / Monogram -->
+            <a href="#hero" class="dock-logo" title="Back to Top / Hero" aria-label="Manjit Chakraborty - Home">
+                <span class="dock-logo-text">MC</span>
             </a>
 
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#projects" class="nav-link active">Projects</a></li>
-                    <li><a href="#experience" class="nav-link">Education &amp; Experience</a></li>
-                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
-                    <li><a href="#wall-of-fame" class="nav-link">Wall of Fame</a></li>
-                </ul>
-            </nav>
+            <!-- Navigation Links (Only: Projects, Education & Experience, Certificates, Wall of Fame) -->
+            <ul class="dock-menu">
+                <li><a href="#projects" class="dock-link active">Projects</a></li>
+                <li><a href="#experience" class="dock-link">Education &amp; Experience</a></li>
+                <li><a href="#certificates" class="dock-link">Certificates</a></li>
+                <li><a href="#wall-of-fame" class="dock-link">Wall of Fame</a></li>
+            </ul>
 
-            <div class="nav-actions">
-                <button id="themeToggle" class="btn-theme-toggle" aria-label="Toggle Night/Light Mode" title="Toggle Theme">
-                    <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            <!-- Dock Quick Actions -->
+            <div class="dock-actions">
+                <!-- Command Palette Shortcut Button (⌘ / Ctrl+K) -->
+                <button id="cmdTrigger" class="btn-icon-dock" title="Quick Search (⌘K / Ctrl+K)" aria-label="Open Command Palette">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
                     </svg>
                 </button>
-                <a href="Manjit_Chakraborty_Resume.pdf" download class="btn-nav-resume">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    <span>Resume</span>
+
+                <!-- Theme Toggle Button (Dark/Light) -->
+                <button id="themeToggle" class="btn-icon-dock" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+                    <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+
+                <!-- Quick Resume Download Button -->
+                <a href="Manjit_Chakraborty_Resume.pdf" download id="dockResumeBtn" class="btn-resume-dock" title="Download Resume">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>CV</span>
+                </a>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <button id="mobileMenuTrigger" class="btn-icon-dock btn-mobile-nav" title="Open Navigation Menu" aria-label="Open Navigation Menu">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+        <div class="mobile-nav-panel">
+            <div class="mobile-nav-header">
+                <a href="#hero" class="mobile-nav-brand" id="mobileBrandLink">
+                    <span class="mobile-brand-badge">MC</span>
+                    <span class="mobile-brand-name">Manjit Chakraborty</span>
+                </a>
+                <button id="mobileMenuClose" class="btn-icon-dock" title="Close Menu" aria-label="Close Navigation Menu">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="mobile-nav-links">
+                <a href="#projects" class="mobile-nav-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+                    <span>Projects</span>
+                </a>
+                <a href="#experience" class="mobile-nav-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span>Education &amp; Experience</span>
+                </a>
+                <a href="#certificates" class="mobile-nav-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <span>Certificates (21 Verified)</span>
+                </a>
+                <a href="#wall-of-fame" class="mobile-nav-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Wall of Fame</span>
+                </a>
+            </nav>
+
+            <div class="mobile-nav-actions">
+                <a href="Manjit_Chakraborty_Resume.pdf" download class="btn-primary mobile-resume-btn" style="width: 100%; justify-content: center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Resume PDF</span>
+                </a>
+
+                <div class="mobile-quick-contacts">
+                    <a href="tel:+916009236698" class="mobile-contact-pill" title="Call Manjit">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+91 6009236698</span>
+                    </a>
+                    <a href="mailto:manjitc.info@gmail.com" class="mobile-contact-pill" title="Email Manjit">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>manjitc.info@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         2. HERO LANDING SECTION (Full Photo Background with Direct Text)
+         ========================================================================== -->
+    <section id="hero" class="hero-landing-section">
+        <div class="hero-backdrop-container">
+            <img src="hero-bg.jpg" alt="Manjit Chakraborty - Electronics &amp; Communication Engineer" class="hero-backdrop-img" fetchpriority="high" decoding="async">
+            <div class="hero-overlay-gradient"></div>
+        </div>
+
+        <div class="container hero-content-wrapper">
+            <div class="hero-direct-content">
+                <div class="hero-eyebrow-text">HI , I AM</div>
+                <h1 class="hero-headline">Manjit Chakraborty</h1>
+                <div class="hero-role-title">Electronics &amp; Communication Engineer</div>
+                <p class="hero-about-text">
+                    Specializing in autonomous UAVs, custom analog &amp; digital PCB design, robotics, and embedded systems.
+                </p>
+
+                <div class="hero-action-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <span>Explore Projects</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="Manjit_Chakraborty_Resume.pdf" download class="btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="#experience" class="btn-secondary">
+                        <span>Education &amp; Experience</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator Cue -->
+        <div class="hero-scroll-cue">
+            <a href="#projects" aria-label="Scroll to explore projects">
+                <span class="scroll-cue-text">Scroll to explore</span>
+                <svg class="scroll-cue-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. SECTION 1: PROJECTS (awrs.me Signature Showcase Cards)
+         ========================================================================== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Engineered physical hardware, autonomous avionics, and verified silicon systems.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 (FLAGSHIP): Multifunction Analog Function Generator -->
+                <div class="project-card">
+                    <div class="project-top-bar">
+                        <span class="project-index">01</span>
+                        <span class="project-category">ANALOG ELECTRONICS &amp; PCB CAD</span>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="project-header-row">
+                        <div class="project-emblem">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h3 class="project-title">Multifunction Analog Function Generator</h3>
+                    </div>
+
+                    <p class="project-summary">
+                        Designed, laid out in <strong>Autodesk Fusion 360</strong>, chemically etched, soldered, and verified an analog signal generator producing stable <strong>Sine</strong>, <strong>Square</strong>, and <strong>Triangle</strong> waveforms across variable frequency and amplitude stages with dual power supply regulation and oscilloscope signal verification.
+                    </p>
+
+                    <!-- Real Media Showcase: Embedded Video + Interactive Oscilloscope Canvas -->
+                    <div class="project-media-frame">
+                        <video class="project-video" autoplay muted loop playsinline controls preload="metadata">
+                            <source src="function-generator.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video playback.
+                        </video>
+
+                        <!-- Live Oscilloscope Interactive Visualizer Widget -->
+                        <div class="oscilloscope-box">
+                            <div class="osc-header">
+                                <span>LIVE OSCILLOSCOPE SIMULATOR</span>
+                                <div class="osc-wave-buttons">
+                                    <button class="btn-osc-wave active" data-wave="sine">Sine</button>
+                                    <button class="btn-osc-wave" data-wave="square">Square</button>
+                                    <button class="btn-osc-wave" data-wave="triangle">Triangle</button>
+                                </div>
+                            </div>
+                            <canvas id="oscilloscopeCanvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-tags-list">
+                            <span class="tag-pill">NE555 Timer</span>
+                            <span class="tag-pill">Fusion 360</span>
+                            <span class="tag-pill">Analog Electronics</span>
+                            <span class="tag-pill">PCB Fabrication</span>
+                            <span class="tag-pill">Oscilloscope Testing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/manjit32987/function-generator" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.08 1.54 1.08.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.26 9.26 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.58 5.07.36.32.68.93.68 1.88 0 1.36-.01 2.46-.01 2.8 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="Function_Generator_Report.pdf" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                <span>Report (PDF)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: Autonomous UAV & Flight Telemetry Platform -->
+                <div class="project-card">
+                    <div class="project-top-bar">
+                        <span class="project-index">02</span>
+                        <span class="project-category">AUTONOMOUS UAV &amp; AVIONICS</span>
+                        <span>2024 &ndash; 2025</span>
+                    </div>
+
+                    <div class="project-header-row">
+                        <div class="project-emblem">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 19 21 12 17 5 21 12 2"/></svg>
+                        </div>
+                        <h3 class="project-title">Autonomous UAV &amp; Telemetry Avionics</h3>
+                    </div>
+
+                    <p class="project-summary">
+                        Engineered a custom high-performance quadrotor UAV platform integrated with <strong>ArduPilot / PX4 autopilot stacks</strong>, dual-band radio telemetry, electronic speed controller (ESC) firmware tuning, high-G FPV aerodynamics, and real-time MAVLink ground station data streaming. Competed nationally to achieve <strong>All India Rank 12 (NIDAR)</strong>.
+                    </p>
+
+                    <!-- Interactive Flight Telemetry HUD Demo -->
+                    <div class="project-media-frame">
+                        <div class="telemetry-hud-box">
+                            <div class="hud-top-data">
+                                <span>SAT LOCK: 18 (3D FIX)</span>
+                                <span>BATTERY: 16.2V [94%]</span>
+                                <span>ALT: 42.5m AGL</span>
+                            </div>
+                            <div class="hud-center-crosshair">
+                                <svg class="hud-crosshair-svg" width="90" height="90" viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                    <line x1="50" y1="20" x2="50" y2="35" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="50" y1="65" x2="50" y2="80" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="20" y1="50" x2="35" y2="50" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="65" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="50" r="4" fill="#38bdf8"/>
+                                </svg>
+                                <div style="font-size: 0.76rem; color: #38bdf8; margin-top: 6px;">ATTITUDE STABLE &bull; ARMED</div>
+                            </div>
+                            <div class="hud-bottom-status">
+                                <span>MODE: AUTO_WP</span>
+                                <span>PITCH: 0.2&deg; &bull; ROLL: -0.1&deg;</span>
+                                <span>GS: 14.2 m/s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-tags-list">
+                            <span class="tag-pill">ArduPilot</span>
+                            <span class="tag-pill">PX4 Autopilot</span>
+                            <span class="tag-pill">QGroundControl</span>
+                            <span class="tag-pill">Telemetry</span>
+                            <span class="tag-pill">FPV Dynamics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/19Qrl7LJOrPkZT7DiEd8BkMt911IFQqVK/view" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <span>AIR 12 Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3: RTL Design, IP Integration & SoC Signoff -->
+                <div class="project-card">
+                    <div class="project-top-bar">
+                        <span class="project-index">03</span>
+                        <span class="project-category">SILICON ARCHITECTURE &amp; VLSI</span>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="project-header-row">
+                        <div class="project-emblem">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                        </div>
+                        <h3 class="project-title">Verilog RTL &amp; SoC Signoff Verification</h3>
+                    </div>
+
+                    <p class="project-summary">
+                        Hardware description modeling using <strong>Verilog HDL</strong> for complex digital control systems. Implemented clock-domain crossings, automated testbenches with self-checking assertions, IP block encapsulation, timing constraint analysis, and SoC signoff validation at NIELIT Agartala.
+                    </p>
+
+                    <div class="project-media-frame" style="padding: 24px; font-family: var(--font-mono); font-size: 0.8rem; background: #07090e; color: #a5f3fc; min-height: 190px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="color: #64748b; margin-bottom: 8px;">// Verilog HDL Synthesis Preview</div>
+                        <div style="color: #f43f5e;">module <span style="color: #38bdf8;">uav_flight_core</span> (</div>
+                        <div style="padding-left: 18px; color: #cbd5e1;">input wire clk_50mhz, rst_n,</div>
+                        <div style="padding-left: 18px; color: #cbd5e1;">input wire [15:0] imu_accel_x, imu_gyro_z,</div>
+                        <div style="padding-left: 18px; color: #34d399;">output reg [3:0] pwm_motor_drive</div>
+                        <div style="color: #f43f5e;">);</div>
+                        <div style="color: #38bdf8; margin-top: 6px;">// Linting: 0 Errors &bull; Timing Slack: MET (+0.42ns)</div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-tags-list">
+                            <span class="tag-pill">Verilog HDL</span>
+                            <span class="tag-pill">RTL Architecture</span>
+                            <span class="tag-pill">SoC Signoff</span>
+                            <span class="tag-pill">Digital Logic</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                <span>View NIELIT Cert ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4: Autonomous Obstacle-Navigating Rover -->
+                <div class="project-card">
+                    <div class="project-top-bar">
+                        <span class="project-index">04</span>
+                        <span class="project-category">ROBOTICS &amp; EMBEDDED C</span>
+                        <span>2024</span>
+                    </div>
+
+                    <div class="project-header-row">
+                        <div class="project-emblem">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <h3 class="project-title">Autonomous Obstacle-Navigating Rover</h3>
+                    </div>
+
+                    <p class="project-summary">
+                        Designed a high-speed obstacle navigation ground rover powered by custom microcontroller firmware in Embedded C, ultrasonic and infrared sensor arrays, and closed-loop motor PID control. Secured <strong>1st Place Winner</strong> at the ICARIA Robotics Championship.
+                    </p>
+
+                    <div class="project-media-frame" style="padding: 24px; background: #0c0f17; color: #ffffff; display: flex; align-items: center; justify-content: center; min-height: 190px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.2rem; font-weight: 800; color: #fbbf24; margin-bottom: 4px;">🏆 1st Place</div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">ICARIA Annual Technical Robotics Championship 2024</div>
+                            <div style="font-size: 0.78rem; color: #34d399; margin-top: 8px;">Autonomous Sensor Calibration &bull; 100% Course Completion</div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-tags-list">
+                            <span class="tag-pill">Embedded C</span>
+                            <span class="tag-pill">Robotics</span>
+                            <span class="tag-pill">Sensor Fusion</span>
+                            <span class="tag-pill">Motor Control</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1NTVseX2LAvj72n29ceRfY4ATtVUa7ArC/view" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                <span>1st Prize Certificate ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. SECTION 2: EDUCATION & EXPERIENCE (Combined Unified Section)
+         ========================================================================== -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education &amp; Experience</h2>
+                <p class="section-subtitle">Academic training, industry internships, research conventions, and state leadership appointments.</p>
+            </div>
+
+            <!-- Subsection A: Education Card -->
+            <div style="max-width: 860px; margin: 0 auto 36px;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span>Education</span>
+                </h3>
+
+                <div class="bento-card" style="padding: 26px;">
+                    <div class="education-box" style="margin-top: 0; background: transparent; border: none; padding: 0;">
+                        <div class="edu-institution" style="font-size: 1.2rem;">
+                            <span>Tripura Institute of Technology (TIT)</span>
+                            <span class="edu-badge">2023 &ndash; 2027 (Expected)</span>
+                        </div>
+                        <div class="edu-degree" style="font-size: 1rem; color: var(--accent-light); font-weight: 600; margin-top: 6px;">
+                            Bachelor of Technology (B.Tech) in Electronics &amp; Communication Engineering
+                        </div>
+                        <div class="edu-spec" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.6;">
+                            <strong>Specialization &amp; Focus:</strong> Autonomous UAV Flight Avionics, Embedded Systems, PCB Design &amp; Fabrication, Verilog RTL &amp; VLSI Design, and Robotics.<br>
+                            <strong>Location:</strong> Agartala, Tripura, India &bull; AICTE Approved Institution
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection B: Experience Timeline -->
+            <div style="max-width: 860px; margin: 0 auto;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <span>Work Experience &amp; Internships</span>
+                </h3>
+
+                <div class="experience-timeline">
+
+                    <!-- Experience Item 1: RTL Design NIELIT -->
+                    <div class="exp-item">
+                        <div class="exp-node"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-role">RTL Design, IP Integration &amp; SoC Signoff Intern</h3>
+                                    <div class="exp-company">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 3h6v4H9z"/></svg>
+                                        <span>NIELIT (National Institute of Electronics &amp; IT), Agartala</span>
+                                    </div>
+                                </div>
+                                <span class="exp-date">July 2026</span>
+                            </div>
+                            <p class="exp-desc">
+                                Conducted advanced RTL design modeling with Verilog HDL, automated behavioral testbench verification, intellectual property (IP) block integration, linting analysis, logic synthesis preparation, and system-on-chip (SoC) signoff validation.
+                            </p>
+                            <div class="exp-tags">
+                                <span class="tag-pill">Verilog HDL</span>
+                                <span class="tag-pill">RTL Design</span>
+                                <span class="tag-pill">IP Integration</span>
+                                <span class="tag-pill">SoC Signoff</span>
+                                <span class="tag-pill">Testbenches</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" rel="noopener noreferrer" class="btn-cert-link">
+                                <span>View Verified Certificate</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2: Drone Technology TIT -->
+                    <div class="exp-item">
+                        <div class="exp-node"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-role">Drone Technology Intern</h3>
+                                    <div class="exp-company">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                        <span>Tripura Institute of Technology, Agartala</span>
+                                    </div>
+                                </div>
+                                <span class="exp-date">July 2025</span>
+                            </div>
+                            <p class="exp-desc">
+                                Spearheaded autonomous UAV fabrication and prototyping, flight controller tuning with ArduPilot &amp; PX4, telemetry radio link configuration, GPS waypoint mission planning, electronic speed controller (ESC) calibration, and flight safety SOPs.
+                            </p>
+                            <div class="exp-tags">
+                                <span class="tag-pill">ArduPilot</span>
+                                <span class="tag-pill">PX4 Autopilot</span>
+                                <span class="tag-pill">Telemetry</span>
+                                <span class="tag-pill">PID Flight Dynamics</span>
+                                <span class="tag-pill">UAV Avionics</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1PYOoNzFcx9598F5W8TntOtXITXTs9CXW/view" target="_blank" rel="noopener noreferrer" class="btn-cert-link">
+                                <span>View Verified Certificate</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3: State Ambassador DFI -->
+                    <div class="exp-item">
+                        <div class="exp-node"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-role">NIDAR State Ambassador</h3>
+                                    <div class="exp-company">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                        <span>Drone Federation of India (DFI)</span>
+                                    </div>
+                                </div>
+                                <span class="exp-date">2024 &ndash; Present</span>
+                            </div>
+                            <p class="exp-desc">
+                                Appointed as State Ambassador representing regional youth aviation outreach, promoting drone technology education, organizing competitive flight arenas, and coordinating with national aviation councils across India.
+                            </p>
+                            <div class="exp-tags">
+                                <span class="tag-pill">Aviation Leadership</span>
+                                <span class="tag-pill">DFI</span>
+                                <span class="tag-pill">UAV Outreach</span>
+                                <span class="tag-pill">Competitive Arenas</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1vDXGz2J4kNZuR7-QWMsOLKlWIuRmpFnj/view" target="_blank" rel="noopener noreferrer" class="btn-cert-link">
+                                <span>View Appointment Letter</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4: Android Development NIELIT -->
+                    <div class="exp-item">
+                        <div class="exp-node"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-role">Android Development Intern</h3>
+                                    <div class="exp-company">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                        <span>NIELIT Agartala</span>
+                                    </div>
+                                </div>
+                                <span class="exp-date">August 2024</span>
+                            </div>
+                            <p class="exp-desc">
+                                Developed native mobile application interfaces using Java/Kotlin, integrated Android SDK component lifecycles, implemented SQLite local data caching, and connected REST API telemetry endpoints.
+                            </p>
+                            <div class="exp-tags">
+                                <span class="tag-pill">Android SDK</span>
+                                <span class="tag-pill">Java</span>
+                                <span class="tag-pill">Kotlin</span>
+                                <span class="tag-pill">REST APIs</span>
+                                <span class="tag-pill">Mobile Architecture</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/18OXR5QXwMd5vmlAfCUALKV-gdANp1jpi/view" target="_blank" rel="noopener noreferrer" class="btn-cert-link">
+                                <span>View Verified Certificate</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. SECTION 3: CERTIFICATES & CREDENTIALS (Live Instant Search & Category Filter)
+         ========================================================================== -->
+    <section id="certificates" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificates</h2>
+                <p class="section-subtitle">21 authenticated honors from MeitY, Drone Federation of India, NIELIT, Ministry of Education &amp; Indian Armed Forces.</p>
+            </div>
+
+            <!-- Controls: Filter Pills & Instant Live Search -->
+            <div class="cert-controls-bar">
+                <div class="cert-filter-pills">
+                    <button class="filter-btn active" data-cert-filter="all">All (21)</button>
+                    <button class="filter-btn" data-cert-filter="awards">Awards &amp; Laurels (6)</button>
+                    <button class="filter-btn" data-cert-filter="drone">Drone &amp; UAV (6)</button>
+                    <button class="filter-btn" data-cert-filter="technical">Technical &amp; VLSI (6)</button>
+                    <button class="filter-btn" data-cert-filter="leadership">Leadership &amp; Honors (3)</button>
+                </div>
+
+                <div class="cert-search-wrapper">
+                    <div class="search-input-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="certSearch" class="search-input" placeholder="Instant search by title, organization, or keyword...">
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1T63u9yf40P0OeprZwn_Tlkpkop6xnRs2?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-drive-folder">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <span>Master Drive Folder</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Certificates Cards Grid (21 Cards) -->
+            <div class="certs-grid" id="certsGrid">
+                
+                <!-- 01. MeitY TIDE 2.0 -->
+                <div class="cert-card" data-category="awards" data-keywords="meity tide 2.0 northeast techathon x5 top 3 performer iim calcutta innovation park hardware pitch">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-gold">Top 3 Winner</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">Top 3 Performer &mdash; MeitY TIDE 2.0 Northeast Techathon X5</h4>
+                        <div class="cert-issuer">Ministry of Electronics &amp; IT &bull; IIM Calcutta Innovation Park</div>
+                        <p class="cert-description">Secured Top 3 position in regional innovation techathon for custom UAV &amp; embedded hardware startup pitch.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">MeitY / IIM</span>
+                        <a href="https://drive.google.com/file/d/1371ElG6WqYqzcWkgQmAwvUHA_O250upG/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 02. NIDAR Drone Challenge -->
+                <div class="cert-card" data-category="drone" data-keywords="nidar 2024 drone challenge air 12 all india rank drone federation of india dfi uav px4 flight dynamics">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">AIR 12 Rank</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">All India Rank 12 &mdash; NIDAR National Drone Challenge</h4>
+                        <div class="cert-issuer">Drone Federation of India (DFI)</div>
+                        <p class="cert-description">National competitive drone design, flight stability, telemetry, and obstacle race challenge.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">DFI / Aviation</span>
+                        <a href="https://drive.google.com/file/d/19Qrl7LJOrPkZT7DiEd8BkMt911IFQqVK/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 03. YUKTI Innovation Challenge -->
+                <div class="cert-card" data-category="awards" data-keywords="yukti innovation challenge national finalist ministry of education moe innovation cell iic hardware prototyping">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-purple">National Finalist</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">National Finalist &mdash; YUKTI Innovation Challenge</h4>
+                        <div class="cert-issuer">Ministry of Education (MoE) Innovation Cell &amp; IIC</div>
+                        <p class="cert-description">Selected as National Finalist for hardware innovation, mechanical prototyping, and electronic architecture.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">MoE India</span>
+                        <a href="https://drive.google.com/file/d/1iQ1b9gkoOYPi9TwqNdfh4kQmFMt3PgLA/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 04. Robotics ICARIA 2024 -->
+                <div class="cert-card" data-category="awards" data-keywords="1st place robotics competition icaria 2024 autonomous obstacle microcontrollers hardware design">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-green">1st Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">1st Place Winner &mdash; Robotics Competition, ICARIA 2024</h4>
+                        <div class="cert-issuer">ICARIA Annual Technical Festival</div>
+                        <p class="cert-description">1st Prize in autonomous robotics navigation, obstacle sensor calibration, and microcontrollers.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Robotics</span>
+                        <a href="https://drive.google.com/file/d/1NTVseX2LAvj72n29ceRfY4ATtVUa7ArC/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 05. Eureka 1st Place -->
+                <div class="cert-card" data-category="awards" data-keywords="eureka 1st place winner innovation challenge annual techfest circuit design hardware prototyping">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-green">1st Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">1st Place Winner &mdash; Eureka Innovation Challenge</h4>
+                        <div class="cert-issuer">Eureka Annual Technical Festival</div>
+                        <p class="cert-description">Won 1st prize in rapid circuit prototyping, schematic development, and technical problem-solving.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Circuit Design</span>
+                        <a href="https://drive.google.com/file/d/1TwEOo455YPg-8u_w12L3V9Eg2jq4ySXz/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 06. Stratathon 1.0 -->
+                <div class="cert-card" data-category="awards" data-keywords="stratathon 1.0 2nd place winner state hackathon iic techno college of engineering rapid prototyping smart electronics">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">2nd Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">2nd Place &mdash; Stratathon 1.0 State Hackathon</h4>
+                        <div class="cert-issuer">Institution's Innovation Council (IIC) &bull; Techno College</div>
+                        <p class="cert-description">State-level hackathon for developing smart electronic IoT systems and embedded firmware under tight deadlines.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Hackathon</span>
+                        <a href="https://drive.google.com/file/d/1W205Rmj0JpdiCFxRZNnkzqC207oftXP-/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 07. Aerial Showdown Drone Racing -->
+                <div class="cert-card" data-category="drone" data-keywords="aerial showdown drone racing 2nd place tcea fpv quadrotor telemetry aerodynamics">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">2nd Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">2nd Place &mdash; Aerial Showdown Drone Racing</h4>
+                        <div class="cert-issuer">Techno College of Engineering Agartala</div>
+                        <p class="cert-description">2nd Prize in high-speed FPV quadrotor maneuverability, aerodynamics, and radio telemetry.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">FPV Racing</span>
+                        <a href="https://drive.google.com/file/d/18oro1hiM3nHGTBXiR3JGeTmhJhQyJHdR/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 08. Inter-College Drone TIT -->
+                <div class="cert-card" data-category="drone" data-keywords="inter-college drone competition 3rd place tripura institute of technology tit quadcopter fpv">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-gold">3rd Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">3rd Place &mdash; Inter-College Drone Competition</h4>
+                        <div class="cert-issuer">Tripura Institute of Technology (TIT)</div>
+                        <p class="cert-description">Custom UAV piloting, precision waypoint landing, and chassis stability.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">UAV Flight</span>
+                        <a href="https://drive.google.com/file/d/1MZWx7_CwwKimQRvtIwb7KxQSCff65uaG/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 09. Utkarsh Skyrush -->
+                <div class="cert-card" data-category="drone" data-keywords="utkarsh 4.0 skyrush drone race 3rd place high speed quadrotor fpv racing pid tuning">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-gold">3rd Place</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">3rd Place &mdash; Utkarsh Skyrush Drone Race</h4>
+                        <div class="cert-issuer">Utkarsh Technical Arena</div>
+                        <p class="cert-description">FPV obstacle course navigation, PID flight dynamics tuning, and high-G maneuvers.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Drone Race</span>
+                        <a href="https://drive.google.com/file/d/1cDHOKZXlnp4tvPeqcn0N5m6cz_n7BrxM/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 10. Drone Tech Internship TIT -->
+                <div class="cert-card" data-category="drone" data-keywords="drone technology internship tripura institute of technology tit autonomous uav ardupilot flight controllers">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-green">Internship</span>
+                            <span class="cert-year">2025</span>
+                        </div>
+                        <h4 class="cert-title">Drone Technology Internship Certificate</h4>
+                        <div class="cert-issuer">Tripura Institute of Technology</div>
+                        <p class="cert-description">Extensive hands-on training in assembling quadrotors, tuning telemetry, and autonomous waypoint navigation.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Autonomous UAV</span>
+                        <a href="https://drive.google.com/file/d/1PYOoNzFcx9598F5W8TntOtXITXTs9CXW/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 11. Drone Flight Skill Certification -->
+                <div class="cert-card" data-category="drone" data-keywords="drone technology skill training certification flight mechanics quadcopter calibration uav systems">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">Certified</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">Drone Technology &amp; Flight Systems Skill Certification</h4>
+                        <div class="cert-issuer">State Aviation &amp; Skill Development Cell</div>
+                        <p class="cert-description">Professional certification covering flight dynamics, quadcopter hardware calibration, and aviation safety SOPs.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Aviation Skill</span>
+                        <a href="https://drive.google.com/file/d/1TWGlgnuun6npGbcKoE6TQiz_AZ33Ywly/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 12. RTL Design NIELIT -->
+                <div class="cert-card" data-category="technical" data-keywords="rtl design ip integration soc signoff nielit agartala vlsi verilog hdl fpga simulation chip design">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-rose">VLSI</span>
+                            <span class="cert-year">2026</span>
+                        </div>
+                        <h4 class="cert-title">RTL Design, IP Integration &amp; SoC Signoff Certification</h4>
+                        <div class="cert-issuer">NIELIT Agartala</div>
+                        <p class="cert-description">Advanced training in Verilog HDL coding, IP block integration, linting, synthesis, and SoC signoff analysis.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Silicon &amp; VLSI</span>
+                        <a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 13. Android Dev NIELIT -->
+                <div class="cert-card" data-category="technical" data-keywords="android development training internship nielit agartala java kotlin mobile apps android studio">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-green">Development</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">Android Development Training &amp; Internship</h4>
+                        <div class="cert-issuer">NIELIT Agartala</div>
+                        <p class="cert-description">Mobile application architecture using Kotlin/Java, user interfaces, persistent data storage, and network requests.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Mobile Dev</span>
+                        <a href="https://drive.google.com/file/d/18OXR5QXwMd5vmlAfCUALKV-gdANp1jpi/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 14. AI for Beginners HP LIFE -->
+                <div class="cert-card" data-category="technical" data-keywords="ai for beginners hp life certification artificial intelligence machine learning neural models">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">HP LIFE</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">AI for Beginners &mdash; HP LIFE Global Foundation</h4>
+                        <div class="cert-issuer">HP LIFE Global Foundation</div>
+                        <p class="cert-description">Accreditation in foundational Machine Learning, Artificial Intelligence applications, and algorithmic principles.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">AI &amp; ML</span>
+                        <a href="https://drive.google.com/file/d/1mTiAJJdEo5ZkujUIB01TmuDNtGGgKAMD/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 15. NIDAR State Ambassador -->
+                <div class="cert-card" data-category="leadership" data-keywords="nidar state ambassador appointment letter manjit chakraborty drone federation of india dfi leadership aviation">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-purple">State Ambassador</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">NIDAR State Ambassador Appointment Letter</h4>
+                        <div class="cert-issuer">Drone Federation of India (DFI)</div>
+                        <p class="cert-description">Official appointment as State Ambassador representing regional drone innovation and youth aviation outreach.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Aviation Leadership</span>
+                        <a href="https://drive.google.com/file/d/1vDXGz2J4kNZuR7-QWMsOLKlWIuRmpFnj/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Letter &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 16. Event Head SIH 2026 -->
+                <div class="cert-card" data-category="leadership" data-keywords="smart india hackathon sih 2026 event head organizing leadership coordination hackathon management">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-purple">Event Head</span>
+                            <span class="cert-year">2026</span>
+                        </div>
+                        <h4 class="cert-title">Smart India Hackathon (SIH) Event Head</h4>
+                        <div class="cert-issuer">Smart India Hackathon (SIH) Internal Committee</div>
+                        <p class="cert-description">Led operations, problem-statement evaluation, and campus coordination for the premier national hackathon.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">SIH Leadership</span>
+                        <a href="https://drive.google.com/file/d/18EJAuybJOq6Dno2lkis9rSnnxlXo543r/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 17. 6 Sikh Regiment -->
+                <div class="cert-card" data-category="leadership" data-keywords="appreciation 6 sikh regiment indian army military camp youth technical demonstration leadership">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-gold">Special Honor</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">Letter of Appreciation &mdash; 6 Sikh Regiment</h4>
+                        <div class="cert-issuer">6 Sikh Regiment &bull; Indian Armed Forces Youth Camp</div>
+                        <p class="cert-description">Commendation for technical demonstration, disciplined engagement, and proactive leadership during camp activities.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Indian Army</span>
+                        <a href="https://drive.google.com/file/d/1GXM7PIFRL3I5PeYyhud-x-xVgz3qxtON/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 18. IIM Calcutta Delegation -->
+                <div class="cert-card" data-category="awards" data-keywords="iim calcutta innovation park delegation northeast techathon x5 meity tide 2.0 entrepreneurship incubation">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-gold">IIM Calcutta</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">IIM Calcutta Delegation Accreditation</h4>
+                        <div class="cert-issuer">IIM Calcutta Innovation Park &bull; MeitY TIDE 2.0</div>
+                        <p class="cert-description">Delegation accreditation for state-level startup pitch and hardware incubation presentation.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Incubation</span>
+                        <a href="https://drive.google.com/file/d/1WerA6lx1fj35tipzACtkiRfbid8zufJV/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 19. Flexible Nanoelectronics -->
+                <div class="cert-card" data-category="technical" data-keywords="flexible nanoelectronics seminar semiconductor sensors device physics nanotech research">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">Research</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">National Seminar on Flexible Nanoelectronics</h4>
+                        <div class="cert-issuer">National Research Seminar Body</div>
+                        <p class="cert-description">Explored emerging semiconductor materials, flexible sensor substrates, and low-power wearable electronics.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Semiconductors</span>
+                        <a href="https://drive.google.com/file/d/1VfCvvLkq-P63NEqeGkKqhwecwvWZfGls/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 20. Renewable Energy Seminar -->
+                <div class="cert-card" data-category="technical" data-keywords="renewable energy systems seminar participation green energy solar pv power electronics sustainable tech">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">Conference</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">National Seminar on Renewable Energy Systems</h4>
+                        <div class="cert-issuer">National Technical Conference &amp; Energy Forum</div>
+                        <p class="cert-description">Participation in sessions on solar PV power electronics, battery management, and green grid integration.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Power Electronics</span>
+                        <a href="https://drive.google.com/file/d/147vIR97tsxxQ9pUhqJHFRpSWrEvtpRQJ/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+                <!-- 21. Eureka Participation -->
+                <div class="cert-card" data-category="technical" data-keywords="eureka participation technical fest exhibition hardware showcase team collaboration">
+                    <div>
+                        <div class="cert-card-header">
+                            <span class="cert-badge badge-blue">Participation</span>
+                            <span class="cert-year">2024</span>
+                        </div>
+                        <h4 class="cert-title">Eureka Technical Exhibition &amp; Festival</h4>
+                        <div class="cert-issuer">Eureka Annual Technical Festival</div>
+                        <p class="cert-description">Exhibited custom hardware prototypes and demonstrated analog signal processing setups to technical reviewers.</p>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="tag-pill">Hardware Showcase</span>
+                        <a href="https://drive.google.com/file/d/178MISVuqHYyhfq5qsmyxYwXMf9uOcyO7/view" target="_blank" rel="noopener noreferrer" class="btn-cert-drive">View Certificate &nearr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="noCertsFound" class="no-certs-found">
+                <p>No certificates found matching your query. Try clearing the search or switching categories.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. SECTION 4: WALL OF FAME (Interactive 22-Milestone Photo Mosaic & Lightbox)
+         ========================================================================== -->
+    <section id="wall-of-fame" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Wall of Fame</h2>
+                <p class="section-subtitle">A photographic record of 22 milestones from national hackathons, research conventions, and flight arenas.</p>
+            </div>
+
+            <div class="fame-mosaic-grid">
+                
+                <div class="fame-card">
+                    <img src="memories/IIM CALCUTTA.jpeg" alt="IIM Calcutta Innovation Park" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">IIM Calcutta Innovation Park</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/NIDAR 2025.jpeg" alt="NIDAR National Drone Challenge" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">NIDAR Drone Challenge</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Meity TIDE 2.0.jpeg" alt="MeitY TIDE 2.0 Northeast Techathon" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">MeitY TIDE 2.0 Techathon</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Governor.jpeg" alt="Meeting with Honorable Governor" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Governor Meeting &amp; Honor</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Northeast Techathon X5.jpeg" alt="Northeast Techathon X5" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Northeast Techathon X5</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Drone Race.jpeg" alt="Drone Racing Championship" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Drone Racing Arena</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/ICFAI , Tripura.jpeg" alt="ICFAI Tripura Technical Showcase" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">ICFAI University Technical Fest</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Presenting Research paper at IEI.jpeg" alt="Presenting Research Paper at IEI" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Research Presentation at IEI</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/TOP 3 Performer.jpeg" alt="Top 3 Performer Award" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Top 3 Performer Trophy</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/NIT AGARTALA.jpeg" alt="NIT Agartala Technical Arena" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">NIT Agartala Technical Arena</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/NEHU , Shillong.jpeg" alt="NEHU Shillong Delegation" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">NEHU Shillong Delegation</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Utkarsh 4.0 Skyrush.jpeg" alt="Utkarsh 4.0 Skyrush Drone Race" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Utkarsh 4.0 Skyrush Race</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/2nd on Utkarsh.jpeg" alt="2nd Place on Utkarsh" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">2nd Place on Utkarsh Podium</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/ICARIA 2024.jpeg" alt="ICARIA 2024 Robotics Victory" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">ICARIA 2024 1st Prize</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/ICARIA.jpeg" alt="ICARIA Techfest Celebration" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">ICARIA Fest Showcase</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/TCEA Techfest.jpeg" alt="TCEA Techfest Aerial Showdown" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">TCEA Techfest Racing</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Speech at TCEA.jpeg" alt="Speech &amp; Technical Address at TCEA" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Keynote Speech at TCEA</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Internal Hackathon.jpeg" alt="SIH Internal Hackathon" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Internal Hackathon Arena</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/stratathon 1.0.jpeg" alt="Stratathon 1.0 Hackathon" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Stratathon 1.0 2nd Place</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/6 sikh Camp.jpeg" alt="6 Sikh Regiment Army Camp" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">6 Sikh Armed Forces Camp</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/Internship.jpeg" alt="Internship Laboratory Team" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Internship Laboratory Team</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+                <div class="fame-card">
+                    <img src="memories/WhatsApp Image 2026-07-23 at 12.49.51 AM.jpeg" alt="Milestone Flight Arena" loading="lazy" decoding="async">
+                    <div class="fame-overlay">
+                        <div class="fame-title">Milestone Flight Arena</div>
+                        <div class="fame-zoom-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Click to enlarge</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. SITE FOOTER & DIRECT CONTACT
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container" style="margin-bottom: 24px;">
+            <div class="social-pills-row" style="justify-content: flex-start;">
+                <a href="mailto:manjitc.info@gmail.com" class="btn-social-pill" title="Email Manjit (Click to send / tap to email)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>manjitc.info@gmail.com</span>
+                </a>
+
+                <a href="tel:+916009236698" class="btn-social-pill" title="Call Manjit (+91 6009236698)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+91 6009236698</span>
+                </a>
+
+                <a href="https://wa.me/916009236698" target="_blank" rel="noopener noreferrer" class="btn-social-pill" title="WhatsApp Message">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
+
+                <a href="https://github.com/manjit32987" target="_blank" rel="noopener noreferrer" class="btn-social-pill" title="GitHub Profile">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <span>GitHub</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/manjit-chakraborty-74a467233/" target="_blank" rel="noopener noreferrer" class="btn-social-pill" title="LinkedIn Profile">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+
+                <a href="https://www.instagram.com/iammanjit____/" target="_blank" rel="noopener noreferrer" class="btn-social-pill" title="Instagram Profile">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    <span>Instagram</span>
                 </a>
             </div>
         </div>
-    </header>
 
-    <!-- Two-Column Page Shell -->
-    <div class="page-wrapper">
-
-        <!-- Left Sticky Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-avatar-wrapper">
-                <img src="profile.png" alt="Manjit Chakraborty" class="sidebar-avatar">
-            </div>
-
-            <h1 class="sidebar-name">Manjit Chakraborty</h1>
-            <p class="sidebar-title">Electronics &amp; Communication Engineer</p>
-            <p class="sidebar-bio">
-                Electronics and Communication Engineer specializing in autonomous UAVs, Embedded Systems, and Robotics. Skilled in PCB Design, Fusion 360, Embedded C, Python, and Linux.
-            </p>
-
-            <ul class="sidebar-links">
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Agartala, Tripura, India</span>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    <a href="tel:6009236698">+91 6009236698</a>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    <a href="mailto:manjitc.info@gmail.com">manjitc.info@gmail.com</a>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    <a href="https://wa.me/6009236698" target="_blank" rel="noopener noreferrer">WhatsApp / Chat</a>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    <a href="https://github.com/manjit32987" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    <a href="https://www.linkedin.com/in/manjit-chakraborty-74a467233/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </li>
-                <li class="sidebar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    <a href="https://www.instagram.com/iammanjit____/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                </li>
-            </ul>
-
-            <div class="sidebar-resume-block">
-                <a href="Manjit_Chakraborty_Resume.pdf" download class="btn-sidebar-resume">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    <span>Download Full Resume</span>
-                </a>
-            </div>
-        </aside>
-
-        <!-- Right Main Academic Content -->
-        <main class="main-content">
-
-            <!-- 1. Featured Hardware Project (First) -->
-            <section id="projects" class="cv-section">
-                <h2 class="section-heading">
-                    Projects
-                    <span class="section-heading-badge">Hardware &amp; UAV</span>
-                </h2>
-                
-                <div class="project-card-academic">
-                    <div class="project-header">
-                        <h3 class="project-title">Multifunction Analog Function Generator</h3>
-                        <span class="project-date">3rd Year B.Tech (ECE) &bull; 2026</span>
-                    </div>
-
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Designed and developed an analog function generator capable of producing stable <strong>Sine</strong>, <strong>Square</strong>, and <strong>Triangle</strong> waveforms with adjustable frequency and amplitude controls. Encompasses analog circuit modeling, custom PCB layout in Fusion 360, manual PCB etching and component soldering, calibration, and oscilloscope signal verification.
-                    </p>
-
-                    <!-- Responsive Video Demonstration -->
-                    <video class="project-video-academic" autoplay muted loop playsinline controls preload="metadata">
-                        <source src="function-generator.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video playback.
-                    </video>
-
-                    <div class="project-tags">
-                        <span class="project-tag">NE555 Timer</span>
-                        <span class="project-tag">Fusion 360</span>
-                        <span class="project-tag">Analog Electronics</span>
-                        <span class="project-tag">PCB Fabrication</span>
-                        <span class="project-tag">Oscilloscope Testing</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://github.com/manjit32987/function-generator" target="_blank" rel="noopener noreferrer" class="btn-project-link">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.08 1.54 1.08.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.26 9.26 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.58 5.07.36.32.68.93.68 1.88 0 1.36-.01 2.46-.01 2.8 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
-                            <span>View Source on GitHub</span>
-                        </a>
-                        <a href="Function_Generator_Report.pdf" target="_blank" rel="noopener noreferrer" class="btn-project-link">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                            <span>Project Report (PDF)</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2. Education & Experience (Second) -->
-            <section id="experience" class="cv-section">
-                <h2 class="section-heading">
-                    Education &amp; Experience
-                    <span class="section-heading-badge">Academic &amp; Industry</span>
-                </h2>
-
-                <!-- Education Subsection -->
-                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    Education
-                </h3>
-                <ul class="academic-list">
-                    <li class="academic-item">
-                        <div class="item-header">B.Tech in Electronics &amp; Communication Engineering &bull; 2023 &ndash; 2027 (Expected)</div>
-                        <ul class="sub-list">
-                            <li>Tripura Institute of Technology (TIT), Agartala, India</li>
-                            <li>Specialization: UAV Flight Systems, Embedded C, Circuit Design &amp; VLSI</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!-- Experience Subsection -->
-                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    Work Experience &amp; Internships
-                </h3>
-                <ul class="academic-list">
-                    
-                    <!-- Internship 1 -->
-                    <li class="academic-item">
-                        <div class="item-header">July 2026: RTL Design, IP Integration &amp; SoC Signoff Intern</div>
-                        <ul class="sub-list">
-                            <li>National Institute of Electronics &amp; Information Technology (NIELIT), Agartala</li>
-                            <li>Hands-on RTL architecture, Verilog HDL modeling, simulation testbenches, IP integration, and SoC signoff verification.</li>
-                            <li><a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Internship 2 -->
-                    <li class="academic-item">
-                        <div class="item-header">July 2025: Drone Technology Intern</div>
-                        <ul class="sub-list">
-                            <li>Tripura Institute of Technology, Agartala</li>
-                            <li>Autonomous UAV prototyping, ArduPilot &amp; PX4 flight controller configuration, telemetry integration, and flight safety SOPs.</li>
-                            <li><a href="https://drive.google.com/file/d/1PYOoNzFcx9598F5W8TntOtXITXTs9CXW/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Internship 3 -->
-                    <li class="academic-item">
-                        <div class="item-header">August 2024: Android Development Intern</div>
-                        <ul class="sub-list">
-                            <li>National Institute of Electronics &amp; Information Technology (NIELIT), Agartala</li>
-                            <li>Mobile application development using Android SDK, Java/Kotlin, UI component lifecycle, and REST API integration.</li>
-                            <li><a href="https://drive.google.com/file/d/18OXR5QXwMd5vmlAfCUALKV-gdANp1jpi/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </section>
-
-            <!-- 3. Certificates & Honors (Third) -->
-            <section id="certificates" class="cv-section">
-                <h2 class="section-heading">
-                    Certificates
-                    <span class="section-heading-badge">21 Verified Credentials</span>
-                </h2>
-
-                <!-- Quick Filter & Search Bar -->
-                <div class="cert-controls">
-                    <div class="filter-pills-row">
-                        <button class="cv-filter-btn active" data-filter="all">All (21)</button>
-                        <button class="cv-filter-btn" data-filter="awards">Awards &amp; Laurels (6)</button>
-                        <button class="cv-filter-btn" data-filter="drone">Drone &amp; UAV (6)</button>
-                        <button class="cv-filter-btn" data-filter="technical">Technical &amp; VLSI (6)</button>
-                        <button class="cv-filter-btn" data-filter="leadership">Leadership &amp; Honors (3)</button>
-                    </div>
-                    <div class="search-input-row">
-                        <input type="text" id="cvCertSearch" class="cv-search-input" placeholder="Quick search by title, organization, or skill...">
-                        <a href="https://drive.google.com/drive/folders/1T63u9yf40P0OeprZwn_Tlkpkop6xnRs2?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-master-drive">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                            <span>Drive Folder</span>
-                        </a>
-                    </div>
-                </div>
-
-                <ul class="academic-list" id="cvCertList">
-
-                    <!-- 01. MeitY TIDE 2.0 -->
-                    <li class="academic-item" data-category="awards" data-keywords="meity tide 2.0 northeast techathon x5 top 3 performer iim calcutta uav embedded iot hardware pitch">
-                        <div class="item-header">
-                            2024: Top 3 Performer &mdash; MeitY TIDE 2.0 Northeast Techathon X5
-                            <span class="honor-tag tag-gold">Top 3 Winner</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Ministry of Electronics &amp; IT (MeitY) &bull; IIM Calcutta Innovation Park</li>
-                            <li>Secured Top 3 position in regional innovation techathon for custom UAV &amp; embedded hardware startup pitch.</li>
-                            <li><a href="https://drive.google.com/file/d/1371ElG6WqYqzcWkgQmAwvUHA_O250upG/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 02. NIDAR Drone Challenge -->
-                    <li class="academic-item" data-category="drone" data-keywords="nidar 2024 drone challenge air 12 all india rank drone federation of india dfi uav px4 flight dynamics">
-                        <div class="item-header">
-                            2024: All India Rank 12 &mdash; NIDAR National Drone Challenge
-                            <span class="honor-tag tag-blue">AIR 12 Rank</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Drone Federation of India (DFI)</li>
-                            <li>National competitive drone design, flight stability, telemetry, and obstacle challenge.</li>
-                            <li><a href="https://drive.google.com/file/d/19Qrl7LJOrPkZT7DiEd8BkMt911IFQqVK/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 03. YUKTI Innovation Challenge -->
-                    <li class="academic-item" data-category="awards" data-keywords="yukti innovation challenge national finalist ministry of education moe innovation cell iic hardware prototyping">
-                        <div class="item-header">
-                            2024: National Finalist &mdash; YUKTI Innovation Challenge
-                            <span class="honor-tag tag-purple">National Finalist</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Ministry of Education (MoE) Innovation Cell &amp; IIC</li>
-                            <li>Selected as National Finalist for hardware innovation, mechanical prototyping, and electronic architecture.</li>
-                            <li><a href="https://drive.google.com/file/d/1iQ1b9gkoOYPi9TwqNdfh4kQmFMt3PgLA/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 04. Robotics ICARIA 2024 -->
-                    <li class="academic-item" data-category="awards" data-keywords="1st place robotics competition icaria 2024 autonomous obstacle microcontrollers hardware design">
-                        <div class="item-header">
-                            2024: 1st Place Winner &mdash; Robotics Competition, ICARIA 2024
-                            <span class="honor-tag tag-green">1st Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>ICARIA Annual Technical Festival</li>
-                            <li>1st Prize in autonomous robotics navigation, sensor calibration, and microcontrollers.</li>
-                            <li><a href="https://drive.google.com/file/d/1NTVseX2LAvj72n29ceRfY4ATtVUa7ArC/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 05. Eureka 1st Place -->
-                    <li class="academic-item" data-category="awards" data-keywords="eureka 1st place winner innovation challenge annual techfest circuit design hardware prototyping">
-                        <div class="item-header">
-                            2024: 1st Place Winner &mdash; Eureka Innovation Challenge
-                            <span class="honor-tag tag-green">1st Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Eureka Annual Technical Festival</li>
-                            <li>Won 1st prize in rapid circuit prototyping, schematic development, and technical problem-solving.</li>
-                            <li><a href="https://drive.google.com/file/d/1TwEOo455YPg-8u_w12L3V9Eg2jq4ySXz/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 06. Stratathon 1.0 -->
-                    <li class="academic-item" data-category="awards" data-keywords="stratathon 1.0 2nd place winner state hackathon iic techno college of engineering rapid prototyping smart electronics">
-                        <div class="item-header">
-                            2024: 2nd Place &mdash; Stratathon 1.0 State Hackathon
-                            <span class="honor-tag tag-blue">2nd Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Institution's Innovation Council (IIC) &bull; Techno College of Engineering</li>
-                            <li>State-level hackathon for developing smart electronic IoT systems and embedded firmware under tight deadlines.</li>
-                            <li><a href="https://drive.google.com/file/d/1W205Rmj0JpdiCFxRZNnkzqC207oftXP-/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 07. Aerial Showdown Drone Racing -->
-                    <li class="academic-item" data-category="drone" data-keywords="aerial showdown drone racing 2nd place tcea fpv quadrotor telemetry aerodynamics">
-                        <div class="item-header">
-                            2024: 2nd Place &mdash; Aerial Showdown Drone Racing
-                            <span class="honor-tag tag-blue">2nd Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Techno College of Engineering Agartala</li>
-                            <li>2nd Prize in high-speed FPV quadrotor maneuverability, aerodynamics, and radio telemetry.</li>
-                            <li><a href="https://drive.google.com/file/d/18oro1hiM3nHGTBXiR3JGeTmhJhQyJHdR/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 08. Inter-College Drone TIT -->
-                    <li class="academic-item" data-category="drone" data-keywords="inter-college drone competition 3rd place tripura institute of technology tit quadcopter fpv">
-                        <div class="item-header">
-                            2024: 3rd Place &mdash; Inter-College Drone Competition
-                            <span class="honor-tag tag-gold">3rd Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Tripura Institute of Technology (TIT)</li>
-                            <li>Custom UAV piloting, precision landing, and flight chassis stability.</li>
-                            <li><a href="https://drive.google.com/file/d/1MZWx7_CwwKimQRvtIwb7KxQSCff65uaG/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 09. Utkarsh Skyrush -->
-                    <li class="academic-item" data-category="drone" data-keywords="utkarsh 4.0 skyrush drone race 3rd place high speed quadrotor fpv racing pid tuning">
-                        <div class="item-header">
-                            2024: 3rd Place &mdash; Utkarsh Skyrush Drone Race
-                            <span class="honor-tag tag-gold">3rd Place</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Utkarsh Technical Arena</li>
-                            <li>FPV obstacle course navigation, PID flight dynamics tuning, and high-G maneuvers.</li>
-                            <li><a href="https://drive.google.com/file/d/1cDHOKZXlnp4tvPeqcn0N5m6cz_n7BrxM/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 10. Drone Tech Internship TIT -->
-                    <li class="academic-item" data-category="drone" data-keywords="drone technology internship tripura institute of technology tit autonomous uav ardupilot flight controllers">
-                        <div class="item-header">
-                            2025: Drone Technology Internship Certificate
-                            <span class="honor-tag tag-green">Internship</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Tripura Institute of Technology</li>
-                            <li>Extensive hands-on training in assembling quadrotors, tuning telemetry, and autonomous waypoint navigation.</li>
-                            <li><a href="https://drive.google.com/file/d/1PYOoNzFcx9598F5W8TntOtXITXTs9CXW/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 11. Drone Flight Skill Certification -->
-                    <li class="academic-item" data-category="drone" data-keywords="drone technology skill training certification flight mechanics quadcopter calibration uav systems">
-                        <div class="item-header">
-                            2024: Drone Technology &amp; Flight Systems Skill Certification
-                            <span class="honor-tag tag-blue">Certified</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>State Aviation &amp; Skill Development Cell</li>
-                            <li>Professional certification covering flight dynamics, quadcopter hardware calibration, and aviation safety SOPs.</li>
-                            <li><a href="https://drive.google.com/file/d/1TWGlgnuun6npGbcKoE6TQiz_AZ33Ywly/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 12. RTL Design NIELIT -->
-                    <li class="academic-item" data-category="technical" data-keywords="rtl design ip integration soc signoff nielit agartala vlsi verilog hdl fpga simulation chip design">
-                        <div class="item-header">
-                            2026: RTL Design, IP Integration &amp; SoC Signoff Certification
-                            <span class="honor-tag tag-teal">VLSI</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>NIELIT Agartala</li>
-                            <li>Advanced training in Verilog HDL coding, IP block integration, linting, synthesis, and SoC signoff analysis.</li>
-                            <li><a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 13. Android Dev NIELIT -->
-                    <li class="academic-item" data-category="technical" data-keywords="android development training internship nielit agartala java kotlin mobile apps android studio">
-                        <div class="item-header">
-                            2024: Android Development Training &amp; Internship
-                            <span class="honor-tag tag-green">Development</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>NIELIT Agartala</li>
-                            <li>Mobile application architecture using Kotlin/Java, user interfaces, persistent data storage, and network requests.</li>
-                            <li><a href="https://drive.google.com/file/d/18OXR5QXwMd5vmlAfCUALKV-gdANp1jpi/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 14. AI for Beginners HP LIFE -->
-                    <li class="academic-item" data-category="technical" data-keywords="ai for beginners hp life certification artificial intelligence machine learning neural models">
-                        <div class="item-header">
-                            2024: AI for Beginners
-                            <span class="honor-tag tag-teal">HP LIFE</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>HP LIFE Global Foundation</li>
-                            <li>Accreditation in foundational Machine Learning, Artificial Intelligence applications, and algorithmic principles.</li>
-                            <li><a href="https://drive.google.com/file/d/1mTiAJJdEo5ZkujUIB01TmuDNtGGgKAMD/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 15. NIDAR State Ambassador -->
-                    <li class="academic-item" data-category="leadership" data-keywords="nidar state ambassador appointment letter manjit chakraborty drone federation of india dfi leadership aviation">
-                        <div class="item-header">
-                            2024: NIDAR State Ambassador Appointment Letter
-                            <span class="honor-tag tag-purple">State Ambassador</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Drone Federation of India (DFI)</li>
-                            <li>Official appointment as State Ambassador representing regional drone innovation and youth aviation outreach.</li>
-                            <li><a href="https://drive.google.com/file/d/1vDXGz2J4kNZuR7-QWMsOLKlWIuRmpFnj/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Letter &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 16. Event Head SIH 2026 -->
-                    <li class="academic-item" data-category="leadership" data-keywords="smart india hackathon sih 2026 event head organizing leadership coordination hackathon management">
-                        <div class="item-header">
-                            2026: Smart India Hackathon (SIH) Event Head
-                            <span class="honor-tag tag-purple">Event Head</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Smart India Hackathon (SIH) Internal Committee</li>
-                            <li>Led operations, problem-statement evaluation, and campus coordination for the premier national hackathon.</li>
-                            <li><a href="https://drive.google.com/file/d/18EJAuybJOq6Dno2lkis9rSnnxlXo543r/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 17. 6 Sikh Regiment -->
-                    <li class="academic-item" data-category="leadership" data-keywords="appreciation 6 sikh regiment indian army military camp youth technical demonstration leadership">
-                        <div class="item-header">
-                            2024: Letter of Appreciation &mdash; 6 Sikh Regiment
-                            <span class="honor-tag tag-gold">Special Honor</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>6 Sikh Regiment &bull; Indian Armed Forces Youth Camp</li>
-                            <li>Commendation for technical demonstration, disciplined engagement, and proactive leadership during camp activities.</li>
-                            <li><a href="https://drive.google.com/file/d/1GXM7PIFRL3I5PeYyhud-x-xVgz3qxtON/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 18. IIM Calcutta Delegation -->
-                    <li class="academic-item" data-category="awards" data-keywords="iim calcutta innovation park delegation northeast techathon x5 meity tide 2.0 entrepreneurship incubation">
-                        <div class="item-header">
-                            2024: IIM Calcutta Delegation Accreditation
-                            <span class="honor-tag tag-gold">IIM Calcutta</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>IIM Calcutta Innovation Park &bull; MeitY TIDE 2.0</li>
-                            <li>Delegation accreditation for state-level startup pitch and hardware incubation presentation.</li>
-                            <li><a href="https://drive.google.com/file/d/1WerA6lx1fj35tipzACtkiRfbid8zufJV/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 19. Flexible Nanoelectronics -->
-                    <li class="academic-item" data-category="technical" data-keywords="flexible nanoelectronics seminar semiconductor sensors device physics nanotech research">
-                        <div class="item-header">
-                            2024: National Seminar on Flexible Nanoelectronics
-                            <span class="honor-tag tag-teal">Research Seminar</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>National Research Seminar Body</li>
-                            <li>Explored emerging semiconductor materials, flexible sensor substrates, and low-power wearable electronics.</li>
-                            <li><a href="https://drive.google.com/file/d/1VfCvvLkq-P63NEqeGkKqhwecwvWZfGls/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 20. Renewable Energy Seminar -->
-                    <li class="academic-item" data-category="technical" data-keywords="renewable energy systems seminar participation green energy solar pv power electronics sustainable tech">
-                        <div class="item-header">
-                            2024: National Seminar on Renewable Energy Systems
-                            <span class="honor-tag tag-teal">Conference</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>National Technical Conference &amp; Energy Forum</li>
-                            <li>Participation in sessions on solar PV power electronics, battery management, and green grid integration.</li>
-                            <li><a href="https://drive.google.com/file/d/147vIR97tsxxQ9pUhqJHFRpSWrEvtpRQJ/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- 21. Eureka Participation -->
-                    <li class="academic-item" data-category="technical" data-keywords="eureka participation technical fest exhibition hardware showcase team collaboration">
-                        <div class="item-header">
-                            2024: Eureka Technical Exhibition &amp; Festival
-                            <span class="honor-tag tag-teal">Participation</span>
-                        </div>
-                        <ul class="sub-list">
-                            <li>Eureka Annual Technical Festival</li>
-                            <li>Exhibited custom hardware prototypes and demonstrated analog signal processing setups to technical reviewers.</li>
-                            <li><a href="https://drive.google.com/file/d/178MISVuqHYyhfq5qsmyxYwXMf9uOcyO7/view" target="_blank" rel="noopener noreferrer" class="cert-link-pill">View Certificate &nearr;</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-
-                <p id="noCertMatch" class="no-cert-match">No certificates match your query. Try another keyword or reset the filter.</p>
-            </section>
-
-            <!-- 4. Wall of Fame (Fourth) -->
-            <section id="wall-of-fame" class="cv-section">
-                <h2 class="section-heading">
-                    Wall of Fame
-                    <span class="section-heading-badge">22 Milestone Moments</span>
-                </h2>
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    A photographic record of 22 milestones from national hackathons, research conventions, and flight arenas.
-                </p>
-
-                <div class="fame-grid-academic">
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/IIM CALCUTTA.jpeg" alt="IIM Calcutta" loading="lazy"></div>
-                        <div class="fame-caption">IIM Calcutta</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/NIDAR 2025.jpeg" alt="NIDAR 2025" loading="lazy"></div>
-                        <div class="fame-caption">NIDAR 2025</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Meity TIDE 2.0.jpeg" alt="MeitY TIDE 2.0" loading="lazy"></div>
-                        <div class="fame-caption">MeitY TIDE 2.0</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Governor.jpeg" alt="Governor" loading="lazy"></div>
-                        <div class="fame-caption">Governor Meeting</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Northeast Techathon X5.jpeg" alt="Northeast Techathon X5" loading="lazy"></div>
-                        <div class="fame-caption">Techathon X5</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Drone Race.jpeg" alt="Drone Race" loading="lazy"></div>
-                        <div class="fame-caption">Drone Race</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/ICFAI , Tripura.jpeg" alt="ICFAI Tripura" loading="lazy"></div>
-                        <div class="fame-caption">ICFAI Tripura</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Presenting Research paper at IEI.jpeg" alt="Research Paper at IEI" loading="lazy"></div>
-                        <div class="fame-caption">Paper at IEI</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/TOP 3 Performer.jpeg" alt="Top 3 Performer" loading="lazy"></div>
-                        <div class="fame-caption">Top 3 Performer</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/NIT AGARTALA.jpeg" alt="NIT Agartala" loading="lazy"></div>
-                        <div class="fame-caption">NIT Agartala</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/NEHU , Shillong.jpeg" alt="NEHU Shillong" loading="lazy"></div>
-                        <div class="fame-caption">NEHU Shillong</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Utkarsh 4.0 Skyrush.jpeg" alt="Utkarsh Skyrush" loading="lazy"></div>
-                        <div class="fame-caption">Utkarsh Skyrush</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/2nd on Utkarsh.jpeg" alt="2nd on Utkarsh" loading="lazy"></div>
-                        <div class="fame-caption">2nd on Utkarsh</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/ICARIA 2024.jpeg" alt="ICARIA 2024" loading="lazy"></div>
-                        <div class="fame-caption">ICARIA 2024</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/ICARIA.jpeg" alt="ICARIA" loading="lazy"></div>
-                        <div class="fame-caption">ICARIA Fest</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/TCEA Techfest.jpeg" alt="TCEA Techfest" loading="lazy"></div>
-                        <div class="fame-caption">TCEA Techfest</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Speech at TCEA.jpeg" alt="Speech at TCEA" loading="lazy"></div>
-                        <div class="fame-caption">Speech at TCEA</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Internal Hackathon.jpeg" alt="Internal Hackathon" loading="lazy"></div>
-                        <div class="fame-caption">Internal Hackathon</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/stratathon 1.0.jpeg" alt="Stratathon 1.0" loading="lazy"></div>
-                        <div class="fame-caption">Stratathon 1.0</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/6 sikh Camp.jpeg" alt="6 Sikh Camp" loading="lazy"></div>
-                        <div class="fame-caption">6 Sikh Camp</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/Internship.jpeg" alt="Internship" loading="lazy"></div>
-                        <div class="fame-caption">Internship Team</div>
-                    </div>
-                    <div class="fame-item-academic">
-                        <div class="fame-thumb-wrapper"><img src="memories/WhatsApp Image 2026-07-23 at 12.49.51 AM.jpeg" alt="Milestone Moment" loading="lazy"></div>
-                        <div class="fame-caption">Milestone Arena</div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <!-- Site Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
+        <div class="container footer-inner">
             <div>
-                &copy; 2026 Manjit Chakraborty &bull; Tripura Institute of Technology (TIT)
+                &copy; <span id="currentYear">2026</span> <strong>Manjit Chakraborty</strong> &bull; Tripura Institute of Technology (TIT), Agartala
             </div>
-            <div>
-                <a href="#projects">Back to top &uarr;</a>
+            <div class="footer-links">
+                <a href="#projects">Projects</a>
+                <a href="#experience">Education &amp; Experience</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#wall-of-fame">Wall of Fame</a>
+                <a href="#hero" style="color: var(--accent-light);">Back to top &uarr;</a>
             </div>
         </div>
     </footer>
 
+    <!-- ==========================================================================
+         8. LIGHTBOX MODAL (Wall of Fame Zoom)
+         ========================================================================== -->
+    <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+        <div class="lightbox-content">
+            <button id="lightboxClose" class="btn-lightbox-close" aria-label="Close Lightbox">&times;</button>
+            <img id="lightboxImg" class="lightbox-img" src="" alt="Milestone Photo">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         9. COMMAND PALETTE MODAL (⌘K / Ctrl+K)
+         ========================================================================== -->
+    <div id="cmdModal" class="cmd-modal" role="dialog" aria-modal="true" aria-label="Command Palette">
+        <div class="cmd-box">
+            <div class="cmd-search-row">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="cmdInput" class="cmd-search-input" placeholder="Search projects, certificates, or press ⌘K..." autocomplete="off">
+                <span class="cmd-item-shortcut">ESC</span>
+            </div>
+            <ul class="cmd-results-list" id="cmdResults">
+                <li class="cmd-item" data-cmd-action="navigate" data-cmd-target="#projects">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+                        <span>Jump to Projects</span>
+                    </div>
+                    <span class="cmd-item-shortcut">#projects</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="navigate" data-cmd-target="#experience">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <span>Jump to Education &amp; Experience</span>
+                    </div>
+                    <span class="cmd-item-shortcut">#experience</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="navigate" data-cmd-target="#certificates">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                        <span>View Verified Certificates (21)</span>
+                    </div>
+                    <span class="cmd-item-shortcut">#certificates</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="navigate" data-cmd-target="#wall-of-fame">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Explore Wall of Fame (22 Photos)</span>
+                    </div>
+                    <span class="cmd-item-shortcut">#wall-of-fame</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="resume">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download Full Resume PDF</span>
+                    </div>
+                    <span class="cmd-item-shortcut">PDF</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="copy-email">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+                        <span>Copy Email (manjitc.info@gmail.com)</span>
+                    </div>
+                    <span class="cmd-item-shortcut">Copy</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="copy-phone">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>Copy Phone (+91 6009236698)</span>
+                    </div>
+                    <span class="cmd-item-shortcut">Call</span>
+                </li>
+                <li class="cmd-item" data-cmd-action="theme">
+                    <div class="cmd-item-left">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/></svg>
+                        <span>Toggle Night / Light Theme</span>
+                    </div>
+                    <span class="cmd-item-shortcut">Theme</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Floating Toast Notification Container -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <!-- Core Script -->
     <script src="script.js"></script>
 </body>
 </html>
