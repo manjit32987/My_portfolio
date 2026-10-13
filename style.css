@@ -16,20 +16,20 @@
     
     --border-subtle: rgba(255, 255, 255, 0.08);
     --border-light: rgba(255, 255, 255, 0.15);
-    --border-accent: rgba(225, 29, 72, 0.35);
+    --border-accent: rgba(109, 179, 73, 0.35);
 
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     --text-inverse: #0b0c10;
 
-    /* Accent & Brand Colors */
-    --accent-primary: #e11d48;       /* Rose-600 */
-    --accent-light: #fb7185;         /* Rose-400 */
-    --accent-dark: #be123c;          /* Rose-700 */
-    --accent-glow: rgba(225, 29, 72, 0.28);
-    --accent-gradient: linear-gradient(135deg, #e11d48 0%, #f43f5e 50%, #fb7185 100%);
-    --ribbon-gradient: linear-gradient(90deg, #9f1239 0%, #e11d48 50%, #be123c 100%);
+    /* Accent & Brand Colors (Lime / Emerald Green) */
+    --accent-primary: #6db349;       /* Signature Vibrant Green */
+    --accent-light: #8ed867;         /* Bright Lime Glow */
+    --accent-dark: #468a28;          /* Forest Contrast Green */
+    --accent-glow: rgba(109, 179, 73, 0.32);
+    --accent-gradient: linear-gradient(135deg, #6db349 0%, #7ecc53 50%, #8ed867 100%);
+    --ribbon-gradient: linear-gradient(90deg, #3f7c24 0%, #6db349 50%, #5ba437 100%);
 
     /* Metric Ring Colors */
     --ring-pink: #f43f5e;
@@ -41,7 +41,7 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
     --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-    --shadow-accent: 0 8px 30px rgba(225, 29, 72, 0.25);
+    --shadow-accent: 0 8px 30px rgba(109, 179, 73, 0.25);
     --glass-blur: blur(20px) saturate(180%);
 
     /* Typography */
@@ -72,7 +72,7 @@
 
     --border-subtle: rgba(0, 0, 0, 0.07);
     --border-light: rgba(0, 0, 0, 0.12);
-    --border-accent: rgba(225, 29, 72, 0.3);
+    --border-accent: rgba(109, 179, 73, 0.3);
 
     --text-primary: #0f172a;
     --text-secondary: #475569;
@@ -82,7 +82,7 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
-    --shadow-accent: 0 8px 30px rgba(225, 29, 72, 0.18);
+    --shadow-accent: 0 8px 30px rgba(109, 179, 73, 0.18);
 }
 
 /* --- Base & Reset --- */
@@ -668,14 +668,14 @@ img, video {
 }
 
 [data-theme="light"] .hero-eyebrow-text {
-    color: #e11d48;
+    color: #468a28;
     text-shadow: none;
     font-weight: 800;
 }
 
 [data-theme="light"] .hero-eyebrow-text::before {
     background: var(--accent-gradient);
-    box-shadow: 0 0 8px rgba(225, 29, 72, 0.4);
+    box-shadow: 0 0 8px rgba(109, 179, 73, 0.4);
 }
 
 [data-theme="light"] .hero-headline {
@@ -684,7 +684,7 @@ img, video {
 }
 
 [data-theme="light"] .hero-role-title {
-    color: #be123c;
+    color: #3f7c24;
     text-shadow: none;
     font-weight: 700;
 }
@@ -698,7 +698,7 @@ img, video {
 [data-theme="light"] .hero-action-buttons .btn-primary {
     background: var(--accent-gradient);
     color: #ffffff;
-    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+    box-shadow: 0 6px 20px rgba(109, 179, 73, 0.35);
 }
 
 [data-theme="light"] .hero-action-buttons .btn-secondary {
@@ -713,8 +713,8 @@ img, video {
 
 [data-theme="light"] .hero-action-buttons .btn-secondary:hover {
     background: #ffffff;
-    border-color: rgba(225, 29, 72, 0.4);
-    color: #e11d48;
+    border-color: rgba(109, 179, 73, 0.4);
+    color: #468a28;
 }
 
 @keyframes heroDirectAppear {
@@ -734,7 +734,7 @@ img, video {
     font-weight: 800;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #fb7185;
+    color: #8ed867;
     margin-bottom: 12px;
     display: inline-flex;
     align-items: center;
@@ -749,7 +749,7 @@ img, video {
     height: 3px;
     background: var(--accent-gradient);
     border-radius: var(--radius-full);
-    box-shadow: 0 0 10px rgba(225, 29, 72, 0.8);
+    box-shadow: 0 0 10px rgba(109, 179, 73, 0.8);
 }
 
 .hero-headline {
@@ -767,7 +767,7 @@ img, video {
     font-family: var(--font-heading);
     font-size: clamp(1.18rem, 2.3vw, 1.65rem);
     font-weight: 700;
-    color: #fca5a5;
+    color: #a6ea86;
     letter-spacing: -0.01em;
     margin-bottom: 18px;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 1px 6px rgba(0, 0, 0, 0.85);
@@ -2030,12 +2030,12 @@ img, video {
 }
 
 .cta-box {
-    background: radial-gradient(circle at 50% 30%, rgba(225, 29, 72, 0.16) 0%, var(--bg-card) 75%);
+    background: radial-gradient(circle at 50% 30%, rgba(109, 179, 73, 0.16) 0%, var(--bg-card) 75%);
     backdrop-filter: var(--glass-blur);
     border: 1px solid var(--border-accent);
     border-radius: var(--radius-xl);
     padding: 65px 36px;
-    box-shadow: var(--shadow-lg), 0 0 60px rgba(225, 29, 72, 0.15);
+    box-shadow: var(--shadow-lg), 0 0 60px rgba(109, 179, 73, 0.15);
     max-width: 920px;
     margin: 0 auto;
 }
@@ -2348,7 +2348,7 @@ img, video {
     }
 
     [data-theme="light"] .hero-role-title {
-        color: #be123c !important;
+        color: #3f7c24 !important;
         text-shadow: none !important;
         font-weight: 700;
     }
@@ -2362,7 +2362,7 @@ img, video {
     [data-theme="light"] .hero-action-buttons .btn-primary {
         background: var(--accent-gradient) !important;
         color: #ffffff !important;
-        box-shadow: 0 8px 24px rgba(225, 29, 72, 0.35) !important;
+        box-shadow: 0 8px 24px rgba(109, 179, 73, 0.35) !important;
     }
 
     [data-theme="light"] .hero-action-buttons .btn-secondary {
