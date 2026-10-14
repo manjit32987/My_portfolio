@@ -31,43 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* -------------------------------------------------------------------------
-     2. Home Split Text Animation (Anime.js)
+     2. Static Hero Title (No Animation Loop)
      ------------------------------------------------------------------------- */
-  try {
-    if (typeof anime !== "undefined" && anime.text && anime.animate) {
-      const { animate, text, stagger } = anime;
-
-      const prof1 = document.querySelector(".home__profession-1");
-      const prof2 = document.querySelector(".home__profession-2");
-
-      if (prof1 && prof2) {
-        const { chars: chars1 } = text.split(".home__profession-1", { chars: true });
-        const { chars: chars2 } = text.split(".home__profession-2", { chars: true });
-
-        if (chars1 && chars1.length > 0) {
-          animate(chars1, {
-            y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 4000, ease: "in(3)" }],
-            duration: 900,
-            ease: "out(3)",
-            delay: stagger(70),
-            loop: true,
-          });
-        }
-
-        if (chars2 && chars2.length > 0) {
-          animate(chars2, {
-            y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 4000, ease: "in(3)" }],
-            duration: 900,
-            ease: "out(3)",
-            delay: stagger(70),
-            loop: true,
-          });
-        }
-      }
-    }
-  } catch (err) {
-    console.warn("Anime.js text animation notice:", err);
-  }
+  // Title remains crisp, clean and fixed as requested
 
   /* -------------------------------------------------------------------------
      3. Swiper Projects Carousel
