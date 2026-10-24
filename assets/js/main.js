@@ -36,7 +36,140 @@ document.addEventListener("DOMContentLoaded", () => {
   // Title remains crisp, clean and fixed as requested
 
   /* -------------------------------------------------------------------------
-     3. Swiper Projects Carousel
+     Toast Notification Helper
+     ------------------------------------------------------------------------- */
+  const toastMsg = document.getElementById("toastMsg");
+  let toastTimer = null;
+  function showToast(text, iconClass = "ri-check-line") {
+    if (!toastMsg) return;
+    toastMsg.innerHTML = `<i class="${iconClass}"></i> <span>${text}</span>`;
+    toastMsg.classList.add("show-toast");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastMsg.classList.remove("show-toast");
+    }, 3200);
+  }
+  window.showToast = showToast;
+
+  /* -------------------------------------------------------------------------
+     Interactive Oscilloscope Simulator (Case Study 01)
+     ------------------------------------------------------------------------- */
+  const oscCanvas = document.getElementById("oscilloscopeCanvas");
+  if (oscCanvas) {
+    const ctx = oscCanvas.getContext("2d");
+    let currentWave = "sine";
+    let phase = 0;
+    const waveBtns = document.querySelectorAll(".btn-osc-wave");
+
+    function resizeOsc() {
+      if (oscCanvas.parentElement) {
+        oscCanvas.width = oscCanvas.parentElement.clientWidth;
+        oscCanvas.height = 120;
+      }
+    }
+    resizeOsc();
+    window.addEventListener("resize", resizeOsc);
+
+    waveBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        waveBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentWave = btn.dataset.wave || "sine";
+        showToast(`Oscilloscope Mode: ${currentWave.toUpperCase()} Wave (10Hz - 100kHz)`, "ri-pulse-line");
+      });
+    });
+
+    function drawWave() {
+      const w = oscCanvas.width;
+      const h = oscCanvas.height;
+      const cy = h / 2;
+
+      ctx.fillStyle = "#03060a";
+      ctx.fillRect(0, 0, w, h);
+
+      // Grid Lines
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.12)";
+      ctx.lineWidth = 1;
+      for (let x = 0; x < w; x += 30) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+      for (let y = 0; y < h; y += 20) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+
+      // Center Reference Axis
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.28)";
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(0, cy);
+      ctx.lineTo(w, cy);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Signal Trace
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = "#38bdf8";
+      ctx.shadowBlur = 9;
+      ctx.beginPath();
+
+      const freq = 0.038;
+      const amp = 36;
+
+      for (let x = 0; x < w; x++) {
+        const t = x * freq + phase;
+        let y = cy;
+        if (currentWave === "sine") {
+          y = cy + Math.sin(t) * amp;
+        } else if (currentWave === "square") {
+          y = cy + (Math.sin(t) >= 0 ? amp * 0.9 : -amp * 0.9);
+        } else if (currentWave === "triangle") {
+          y = cy + Math.asin(Math.sin(t)) * (2 / Math.PI) * amp;
+        }
+
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      phase += 0.07;
+      requestAnimationFrame(drawWave);
+    }
+    requestAnimationFrame(drawWave);
+  }
+
+  /* -------------------------------------------------------------------------
+     Projects Category Filter
+     ------------------------------------------------------------------------- */
+  const projectFilterBtns = document.querySelectorAll("[data-project-filter]");
+  const projectCards = document.querySelectorAll(".case-card");
+
+  projectFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      projectFilterBtns.forEach((b) => b.classList.remove("active-project-filter"));
+      btn.classList.add("active-project-filter");
+      const filter = btn.dataset.projectFilter;
+
+      projectCards.forEach((card) => {
+        const cat = card.dataset.projectCategory || "";
+        if (filter === "all" || cat.includes(filter)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+  /* -------------------------------------------------------------------------
+     3. Swiper Projects Carousel (if swiper layout used)
      ------------------------------------------------------------------------- */
   try {
     if (typeof Swiper !== "undefined" && document.querySelector(".projects__swiper")) {
@@ -51,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
           clickable: true,
         },
         autoplay: {
-          delay: 3500,
+          delay: 4500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         },
@@ -60,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (err) {
     console.warn("Swiper initialization notice:", err);
   }
+
 
   /* -------------------------------------------------------------------------
      4. Work Tabs (Experience & Education)
@@ -247,7 +381,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* -------------------------------------------------------------------------
-     9. Copy Email In Contact
+     Case Study Detail Modal Logic
+     ------------------------------------------------------------------------- */
+  const caseModal = document.getElementById("caseModal");
+  const caseModalClose = document.getElementById("caseModalClose");
+  const caseModalTitle = document.getElementById("caseModalTitle");
+  const caseModalBody = document.getElementById("caseModalBody");
+
+  window.openCaseModal = function (title, contentHtml) {
+    if (!caseModal) return;
+    if (caseModalTitle) caseModalTitle.textContent = title;
+    if (caseModalBody) caseModalBody.innerHTML = contentHtml;
+    caseModal.classList.add("active-modal");
+    document.body.style.overflow = "hidden";
+  };
+
+  function closeCaseModal() {
+    if (!caseModal) return;
+    caseModal.classList.remove("active-modal");
+    document.body.style.overflow = "";
+  }
+
+  if (caseModalClose) {
+    caseModalClose.addEventListener("click", closeCaseModal);
+  }
+
+  if (caseModal) {
+    caseModal.addEventListener("click", (e) => {
+      if (e.target === caseModal) closeCaseModal();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && caseModal && caseModal.classList.contains("active-modal")) {
+      closeCaseModal();
+    }
+  });
+
+  /* -------------------------------------------------------------------------
+     9. Copy Email In Contact & Toast
      ------------------------------------------------------------------------- */
   const copyBtn = document.getElementById("contact-btn");
   const copyEmailElem = document.getElementById("contact-email");
@@ -256,6 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const copyEmail = copyEmailElem.textContent.trim();
     copyBtn.addEventListener("click", () => {
       navigator.clipboard.writeText(copyEmail).then(() => {
+        showToast(`Email copied: ${copyEmail}`, "ri-file-copy-line");
         const originalHtml = copyBtn.innerHTML;
         copyBtn.innerHTML = 'Email Copied <i class="ri-check-line"></i>';
         setTimeout(() => {
@@ -264,6 +437,35 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  /* -------------------------------------------------------------------------
+     Direct Message Composer Form Handler
+     ------------------------------------------------------------------------- */
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("contactName")?.value.trim() || "";
+      const senderEmail = document.getElementById("contactSenderEmail")?.value.trim() || "";
+      const subject = document.getElementById("contactSubject")?.value.trim() || "Engineering Inquiry / Opportunity";
+      const message = document.getElementById("contactMessage")?.value.trim() || "";
+
+      if (!name || !senderEmail || !message) {
+        showToast("Please complete your name, email, and message.", "ri-error-warning-line");
+        return;
+      }
+
+      showToast("Opening your default mail client...", "ri-mail-send-line");
+
+      const bodyText = `From: ${name} (${senderEmail})%0D%0A%0D%0A${encodeURIComponent(message)}`;
+      const mailtoUrl = `mailto:manjitc.info@gmail.com?subject=${encodeURIComponent(subject)}&body=${bodyText}`;
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 500);
+    });
+  }
+
 
   /* -------------------------------------------------------------------------
      10. Dynamic Current Year of Footer
@@ -342,7 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reset: false,
       });
 
-      sr.reveal(`.home__image, .projects__container, .work__container, .testimonials__container, .certs__controls, .certs__grid, .contact__container`);
+      sr.reveal(`.home__image, .projects__container, .skills__container, .work__container, .testimonials__container, .certs__controls, .certs__grid, .contact__container`);
       sr.reveal(`.home__data`, { delay: 600, origin: "bottom" });
       sr.reveal(`.home__info`, { delay: 800, origin: "bottom" });
       sr.reveal(`.home__social, .home__cv`, { delay: 900 });

@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO & METADATA -->
-    <title>Manjit Chakraborty | Portfolio — Electronics & UAV Engineer</title>
-    <meta name="description" content="Portfolio of Manjit Chakraborty — Electronics & Communication Engineer specializing in autonomous UAVs, embedded systems, custom PCB design, robotics, and Verilog RTL." />
-    <meta name="keywords" content="Manjit Chakraborty, Electronics Engineer, UAV Autopilot, Embedded Systems, PCB Design, Robotics, Drone Technology, Agartala, TIT, ArduPilot, PX4" />
+    <title>Manjit Chakraborty | Portfolio — Electronics &amp; UAV Engineer</title>
+    <meta name="description" content="Official engineering portfolio of Manjit Chakraborty — Electronics &amp; Communication Engineer specializing in autonomous UAVs, embedded systems, custom PCB design, robotics, and Verilog RTL." />
+    <meta name="keywords" content="Manjit Chakraborty, Electronics Engineer, UAV Autopilot, Embedded Systems, PCB Design, Robotics, Drone Technology, Agartala, TIT, ArduPilot, PX4, Verilog HDL" />
     <meta name="author" content="Manjit Chakraborty" />
     <meta name="theme-color" content="#050508" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Manjit Chakraborty | Electronics &amp; UAV Engineer Portfolio" />
+    <meta property="og:description" content="Autonomous UAVs, embedded firmware, custom PCBs, robotics, and Verilog RTL." />
+    <meta property="og:image" content="manjit_bg_removed.png" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
@@ -33,13 +39,18 @@
       <nav class="nav container">
         <a href="#" class="nav__logo">Manjit Chakraborty</a>
 
+        <!-- Desktop Quick Resume Action -->
+        <a href="Manjit_Chakraborty_Resume.pdf" download="Manjit_Chakraborty_Resume.pdf" class="nav__resume-btn" title="Download Official PDF Resume">
+          Resume <i class="ri-download-2-line"></i>
+        </a>
+
         <!-- Mobile Menu Toggle Button -->
-        <div class="nav__toggle" id="nav-toggle">
+        <div class="nav__toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
           <i class="ri-menu-line"></i>
         </div>
 
         <div class="nav__menu" id="nav-menu">
-          <div class="nav__close" id="nav-close">
+          <div class="nav__close" id="nav-close" aria-label="Close Navigation Menu">
             <i class="ri-close-line"></i>
           </div>
 
@@ -49,9 +60,6 @@
             </li>
             <li>
               <a href="#work" class="nav__link">Experience</a>
-            </li>
-            <li class="nav__item-secondary">
-              <a href="#services" class="nav__link">Capabilities</a>
             </li>
             <li class="nav__item-secondary">
               <a href="#fame" class="nav__link">Wall of Fame</a>
@@ -65,8 +73,8 @@
           </ul>
 
           <div class="nav__mobile-actions">
-            <a href="Manjit_Chakraborty_Resume.pdf" download target="_blank" class="button" style="padding: 0.75rem 1.5rem; justify-content: center; font-size: 0.85rem;">
-              Resume <i class="ri-download-2-line"></i>
+            <a href="Manjit_Chakraborty_Resume.pdf" download="Manjit_Chakraborty_Resume.pdf" class="button hero__btn-primary" style="padding: 0.75rem 1.5rem; justify-content: center; font-size: 0.85rem;">
+              Download Resume <i class="ri-download-2-line"></i>
             </a>
             <div style="font-size: 0.8rem; color: var(--text-color-light); text-align: center;">
               Agartala, Tripura &bull; +91 6009236698
@@ -81,7 +89,7 @@
       <!-- CUSTOM CURSOR -->
       <div class="cursor"></div>
 
-      <!-- HOME -->
+      <!-- HOME / HERO -->
       <section class="home section section-top section-two" id="home">
         <div class="home__shadow"></div>
         <div class="home__container container grid">
@@ -97,44 +105,55 @@
             <div class="blob-animate"></div>
             <img
               src="manjit_bg_removed.png"
-              alt="Manjit Chakraborty"
+              alt="Manjit Chakraborty — Electronics &amp; UAV Engineer"
               class="home__profile"
             />
           </div>
 
           <div class="home__info">
-            <h2 class="home__profession-1">Electronics &amp; Communication</h2>
-            <h2 class="home__profession-2">Engineer</h2>
+            <h2 class="home__profession-1">Electronics &amp;</h2>
+            <h2 class="home__profession-2">Communication Engineer</h2>
             <p class="home__description">
-              I'm an <b>Electronics &amp; Communication Engineer</b> passionate about designing
-              <b>autonomous UAVs, embedded systems, custom PCBs, and robotics</b>.
-              Driven by curiosity and hands-on fabrication, I specialize in flight avionics,
-              sensor fusion, and Verilog RTL modeling for robust hardware solutions.
+              Electronics &amp; Communication Engineer specializing in <b>autonomous UAV flight avionics, embedded firmware (STM32 / ESP32), custom PCB design, robotics, and computer vision</b>. Proven track record across flight systems, sensor fusion, and Verilog RTL verification.
             </p>
+            <div class="home__cta">
+              <a href="#projects" class="hero__btn-primary">
+                Explore Projects <i class="ri-arrow-right-down-line"></i>
+              </a>
+              <a href="Manjit_Chakraborty_Resume.pdf" download="Manjit_Chakraborty_Resume.pdf" class="button--ghost hero__btn-secondary" title="Download Official PDF Resume">
+                Download Resume <i class="ri-download-2-line"></i>
+              </a>
+            </div>
           </div>
 
           <div class="home__social">
             <a
               href="https://www.linkedin.com/in/manjit-chakraborty"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__social-link"
               title="LinkedIn Profile"
+              aria-label="LinkedIn Profile"
             >
               <i class="ri-linkedin-fill"></i>
             </a>
             <a
               href="https://github.com/manjit32987"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__social-link"
               title="GitHub Profile"
+              aria-label="GitHub Profile"
             >
               <i class="ri-github-line"></i>
             </a>
             <a
               href="https://wa.me/916009236698"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__social-link"
               title="Chat on WhatsApp"
+              aria-label="WhatsApp"
             >
               <i class="ri-whatsapp-line"></i>
             </a>
@@ -142,6 +161,7 @@
               href="mailto:manjitc.info@gmail.com"
               class="home__social-link"
               title="Email Manjit"
+              aria-label="Email"
             >
               <i class="ri-mail-line"></i>
             </a>
@@ -149,6 +169,7 @@
               href="tel:+916009236698"
               class="home__social-link"
               title="Call Manjit"
+              aria-label="Phone"
             >
               <i class="ri-phone-line"></i>
             </a>
@@ -156,601 +177,235 @@
 
           <a
             href="Manjit_Chakraborty_Resume.pdf"
-            download
-            target="_blank"
+            download="Manjit_Chakraborty_Resume.pdf"
             class="home__cv"
+            title="Download Resume (PDF)"
             >Resume <i class="ri-file-list-2-line"></i
           ></a>
         </div>
       </section>
 
-      <!-- PROJECTS -->
+
+            <!-- PROJECTS SECTION -->
       <section class="projects section" id="projects">
         <h2 class="section__title">
-          I make Incredible <br />
-          <span>Projects</span>
+          Projects
         </h2>
 
-        <div class="projects__container container grid">
-          <div class="projects__swiper swiper">
-            <div class="swiper-wrapper">
+        <div class="projects__container container">
+          <article class="single-project-card">
+            <div class="blob"></div>
 
-              <!-- Project 1: Multifunction Analog Function Generator -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
+            <h3 class="single-project-title">Multifunction Analog Function Generator</h3>
 
-                <div class="projects__number">
-                  <h1>01</h1>
-                  <h3>Hardware</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    Multifunction Analog <br />
-                    Function Generator
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    NE555 Timer, Autodesk Fusion 360 PCB, Chemical Etching, SMD Soldering, Dual-Rail Regulation, Oscilloscope Signal Verification
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">Fusion 360</span>
-                    <span class="projects__tag">PCB Etching</span>
-                    <span class="projects__tag">NE555</span>
-                    <span class="projects__tag">Analog CAD</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <video class="projects__video" controls autoplay muted loop playsinline preload="metadata">
-                    <source src="function-generator.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video playback.
-                  </video>
-                  <a
-                    href="https://github.com/manjit32987/function-generator"
-                    target="_blank"
-                    class="projects__button"
-                    title="View Source Code"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://github.com/manjit32987/function-generator" target="_blank" class="projects__action-btn">
-                    <i class="ri-github-line"></i> Code
-                  </a>
-                  <a href="Function_Generator_Report.pdf" target="_blank" class="projects__action-btn">
-                    <i class="ri-file-pdf-line"></i> Report (PDF)
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 2: Autonomous UAV & Telemetry Avionics -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
-
-                <div class="projects__number">
-                  <h1>02</h1>
-                  <h3>Avionics</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    Autonomous UAV &amp; <br />
-                    Telemetry Avionics
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    ArduPilot, PX4 Autopilot, QGroundControl, Dual-band Radio Telemetry, FPV Dynamics. Ranked AIR 12 Nationally (NIDAR).
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">ArduPilot</span>
-                    <span class="projects__tag">PX4 Autopilot</span>
-                    <span class="projects__tag">MAVLink</span>
-                    <span class="projects__tag">AIR 12 NIDAR</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <img
-                    src="memories/Drone Race.jpeg"
-                    alt="Autonomous UAV &amp; Telemetry Avionics"
-                    class="projects__img"
-                    style="height: 240px; width: 100%; object-fit: cover;"
-                  />
-                  <a
-                    href="https://drive.google.com/file/d/19Qrl7LJOrPkZT7DiEd8BkMt911IFQqVK/view"
-                    target="_blank"
-                    class="projects__button"
-                    title="View AIR 12 Certificate"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://drive.google.com/file/d/19Qrl7LJOrPkZT7DiEd8BkMt911IFQqVK/view" target="_blank" class="projects__action-btn">
-                    <i class="ri-award-line"></i> AIR 12 Certificate
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 3: Verilog RTL & SoC Signoff Verification -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
-
-                <div class="projects__number">
-                  <h1>03</h1>
-                  <h3>VLSI</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    Verilog RTL &amp; <br />
-                    SoC Signoff Verification
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    Verilog HDL, ModelSim, Behavioral Testbenches, IP Block Integration, Timing Slack Analysis, SoC Signoff at NIELIT Agartala.
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">Verilog HDL</span>
-                    <span class="projects__tag">RTL Modeling</span>
-                    <span class="projects__tag">SoC Signoff</span>
-                    <span class="projects__tag">NIELIT</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <img
-                    src="cert_thumbnails/cert_12_15pSBqQm.jpg"
-                    alt="Verilog RTL &amp; SoC Signoff Verification"
-                    class="projects__img"
-                    style="height: 240px; width: 100%; object-fit: cover;"
-                  />
-                  <a
-                    href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view"
-                    target="_blank"
-                    class="projects__button"
-                    title="View NIELIT Certificate"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://drive.google.com/file/d/15pSBqQmv0iYMABABqz_fccBPX9yn4Vds/view" target="_blank" class="projects__action-btn">
-                    <i class="ri-file-check-line"></i> NIELIT Certificate
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 4: Autonomous Obstacle-Navigating Rover -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
-
-                <div class="projects__number">
-                  <h1>04</h1>
-                  <h3>Robotics</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    Autonomous Obstacle- <br />
-                    Navigating Rover
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    Embedded C, Ultrasonic &amp; IR Sensor Arrays, Closed-Loop PID Motor Speed Control. Secured 1st Place at ICARIA Robotics.
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">Embedded C</span>
-                    <span class="projects__tag">Robotics</span>
-                    <span class="projects__tag">Sensor Fusion</span>
-                    <span class="projects__tag">1st Place</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <img
-                    src="memories/ICARIA 2024.jpeg"
-                    alt="Autonomous Obstacle-Navigating Rover"
-                    class="projects__img"
-                    style="height: 240px; width: 100%; object-fit: cover;"
-                  />
-                  <a
-                    href="https://drive.google.com/file/d/1NTVseX2LAvj72n29ceRfY4ATtVUa7ArC/view"
-                    target="_blank"
-                    class="projects__button"
-                    title="View 1st Prize Certificate"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://drive.google.com/file/d/1NTVseX2LAvj72n29ceRfY4ATtVUa7ArC/view" target="_blank" class="projects__action-btn">
-                    <i class="ri-trophy-line"></i> 1st Prize Winner
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 5: High-Speed FPV Racing Quadrotor -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
-
-                <div class="projects__number">
-                  <h1>05</h1>
-                  <h3>UAV Flight</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    High-Speed FPV <br />
-                    Racing Quadrotor
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    Custom Carbon Fiber Frame, Betaflight Firmware, ESC Telemetry, High-G Aerodynamic Tuning. 3rd Place at Utkarsh Skyrush Arena.
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">FPV Racing</span>
-                    <span class="projects__tag">Betaflight</span>
-                    <span class="projects__tag">ESC Tuning</span>
-                    <span class="projects__tag">Podium Finish</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <img
-                    src="memories/Utkarsh 4.0 Skyrush.jpeg"
-                    alt="High-Speed FPV Racing Quadrotor"
-                    class="projects__img"
-                    style="height: 240px; width: 100%; object-fit: cover;"
-                  />
-                  <a
-                    href="https://drive.google.com/file/d/1cDHOKZXlnp4tvPeqcn0N5m6cz_n7BrxM/view"
-                    target="_blank"
-                    class="projects__button"
-                    title="View Utkarsh Certificate"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://drive.google.com/file/d/1cDHOKZXlnp4tvPeqcn0N5m6cz_n7BrxM/view" target="_blank" class="projects__action-btn">
-                    <i class="ri-medal-line"></i> Podium Finish
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 6: MeitY TIDE 2.0 Hardware Innovation -->
-              <article class="projects__card swiper-slide">
-                <div class="blob"></div>
-
-                <div class="projects__number">
-                  <h1>06</h1>
-                  <h3>Innovation</h3>
-                </div>
-
-                <div class="projects__data">
-                  <h1 class="projects__title">
-                    MeitY TIDE 2.0 <br />
-                    Hardware Innovation
-                  </h1>
-                  <p class="projects__subtitle">Techstack used</p>
-                  <p class="projects__description">
-                    UAV &amp; Embedded IoT Startup Pitch, Rapid Prototyping, Ministry of Electronics &amp; IT. Top 3 Performer at IIM Calcutta Innovation Park.
-                  </p>
-                  <div class="projects__tags">
-                    <span class="projects__tag">MeitY TIDE</span>
-                    <span class="projects__tag">IIM Calcutta</span>
-                    <span class="projects__tag">Hardware Pitch</span>
-                    <span class="projects__tag">Top 3</span>
-                  </div>
-                </div>
-
-                <div class="projects__image">
-                  <img
-                    src="memories/Meity TIDE 2.0.jpeg"
-                    alt="MeitY TIDE 2.0 Hardware Innovation"
-                    class="projects__img"
-                    style="height: 240px; width: 100%; object-fit: cover;"
-                  />
-                  <a
-                    href="https://drive.google.com/file/d/1371ElG6WqYqzcWkgQmAwvUHA_O250upG/view"
-                    target="_blank"
-                    class="projects__button"
-                    title="View MeitY Certificate"
-                  >
-                    <i class="ri-arrow-right-up-long-line"></i>
-                  </a>
-                </div>
-
-                <div class="projects__actions">
-                  <a href="https://drive.google.com/file/d/1371ElG6WqYqzcWkgQmAwvUHA_O250upG/view" target="_blank" class="projects__action-btn">
-                    <i class="ri-trophy-line"></i> Top 3 Performer
-                  </a>
-                </div>
-              </article>
-
+            <div class="single-project-video-wrapper">
+              <video class="projects__video" controls autoplay muted loop playsinline preload="metadata">
+                <source src="function-generator.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video playback.
+              </video>
             </div>
 
-            <div class="swiper-pagination"></div>
-          </div>
+            <div>
+              <div class="single-project-tools-label">Tools &amp; Components Used</div>
+              <div class="single-project-tools">
+                <span class="projects__tag">Autodesk Fusion 360 PCB</span>
+                <span class="projects__tag">Chemical Copper Etching</span>
+                <span class="projects__tag">NE555 Timer</span>
+                <span class="projects__tag">LM7812 / LM7912 Regulators</span>
+                <span class="projects__tag">Dual-Rail Power Supply</span>
+                <span class="projects__tag">SMD &amp; Through-Hole Soldering</span>
+                <span class="projects__tag">Digital Oscilloscope</span>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- WORK -->
+
+                  <!-- EDUCATION & EXPERIENCE SECTION (LINKEDIN 2-COLUMN STYLE) -->
       <section class="work section" id="work">
         <h2 class="section__title">
-          <span>My Journey</span>
+          <span>Education &amp;</span>
           <br />
-          Experience &amp; Education
+          Experience
         </h2>
 
-        <div class="work__container container grid">
-          <div class="work__tabs">
-            <!-- Button Experience -->
-            <button class="work__button work-active" data-target="#experience">
-              Experience <i class="ri-briefcase-3-line"></i>
-            </button>
+        <div class="container">
+          <div class="profile-card-grid">
 
-            <!-- Button Education -->
-            <button class="work__button" data-target="#education">
-              Education <i class="ri-graduation-cap-line"></i>
-            </button>
-          </div>
+            <!-- LEFT COLUMN: EDUCATION CARD -->
+            <div class="li-card">
+              <h3 class="li-card__heading">Education</h3>
 
-          <div class="work__area">
-            <div class="work__line"></div>
-
-            <!-- Content Experience -->
-            <div class="work__content work-active" data-content id="experience">
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">RTL Design &amp; SoC Signoff Intern</h1>
-                    <h3 class="work__subtitle">NIELIT Agartala</h3>
-                  </div>
-                  <h2 class="work__year">
-                    July<br />
-                    2026
-                  </h2>
+              <!-- Education 1: B.Tech TIT -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/tit.png" alt="TIT Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">TIT</div>
                 </div>
-
-                <p class="work__description">
-                  Modeled digital control architectures with Verilog HDL, automated behavioral testbenches, integrated IP blocks, ran linting and synthesis, and validated SoC timing signoff metrics.
-                </p>
+                <div class="li-single-content">
+                  <h4 class="li-school-name">Tripura Institute of Technology (TIT)</h4>
+                  <div class="li-degree-name">Bachelor of Technology - BTech, Electronics &amp; Communication Engineering</div>
+                  <div class="li-date-range">2022 &ndash; 2026</div>
+                </div>
               </div>
 
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">Drone Technology Intern</h1>
-                    <h3 class="work__subtitle">Tripura Institute of Technology</h3>
-                  </div>
-                  <h2 class="work__year">
-                    July<br />
-                    2025
-                  </h2>
-                </div>
+              <div class="li-divider"></div>
 
-                <p class="work__description">
-                  Spearheaded autonomous UAV fabrication, ArduPilot &amp; PX4 flight controller tuning, radio telemetry link setup, GPS waypoint mission planning, and ESC calibration.
-                </p>
+              <!-- Education 2: Diploma TIT -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/tit.png" alt="TIT Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">TIT</div>
+                </div>
+                <div class="li-single-content">
+                  <h4 class="li-school-name">Tripura Institute of Technology (TIT)</h4>
+                  <div class="li-degree-name">Diploma of Education, Electronics &amp; Telecommunication Engineering</div>
+                  <div class="li-date-range">2019 &ndash; 2022</div>
+                </div>
               </div>
 
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">NIDAR State Ambassador</h1>
-                    <h3 class="work__subtitle">Drone Federation of India (DFI)</h3>
-                  </div>
-                  <h2 class="work__year">
-                    2024 &ndash;<br />
-                    Present
-                  </h2>
-                </div>
+              <div class="li-divider"></div>
 
-                <p class="work__description">
-                  Appointed as regional aviation outreach ambassador, promoting drone technology education, organizing competitive flight arenas, and coordinating with national aerospace councils.
-                </p>
+              <!-- Education 3: Higher Secondary TBSE -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/tbse.png" alt="TBSE Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">TBSE</div>
+                </div>
+                <div class="li-single-content">
+                  <h4 class="li-school-name">Tripura Board of Secondary Education (TBSE)</h4>
+                  <div class="li-degree-name">Higher Secondary (12th), Science (Physics, Chemistry, Mathematics)</div>
+                  <div class="li-date-range">2021 &ndash; 2023</div>
+                </div>
               </div>
 
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">Android Development Intern</h1>
-                    <h3 class="work__subtitle">NIELIT Agartala</h3>
+            </div>
+
+            <!-- RIGHT COLUMN: EXPERIENCE CARD -->
+            <div class="li-card">
+              <h3 class="li-card__heading">Experience</h3>
+
+              <!-- Company 1: NIELIT (Grouped with connected timeline line) -->
+              <div class="li-entry-group">
+                <div class="li-group-header">
+                  <div class="li-logo">
+                    <img src="assets/img/logos/nielit.png" alt="NIELIT Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="li-logo-fallback" style="display:none;">NIELIT</div>
                   </div>
-                  <h2 class="work__year">
-                    August<br />
-                    2024
-                  </h2>
+                  <div class="li-group-meta">
+                    <h4 class="li-company-name">NIELIT (National Institute of Electronics &amp; IT)</h4>
+                    <span class="li-group-duration">2 yrs</span>
+                  </div>
                 </div>
 
-                <p class="work__description">
-                  Developed mobile applications using Java/Kotlin, integrated Android SDK component lifecycles, implemented SQLite database persistence, and built REST API connectivity.
-                </p>
-              </div>
-            </div>
+                <div class="li-timeline-wrapper">
+                  <div class="li-timeline-line"></div>
 
-            <!-- Content Education -->
-            <div class="work__content" data-content id="education">
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">B.Tech in Electronics &amp; Communication</h1>
-                    <h3 class="work__subtitle">
-                      Tripura Institute of Technology (TIT)
-                    </h3>
+                  <!-- Role 1 in Group -->
+                  <div class="li-timeline-node">
+                    <div class="li-node-bullet"></div>
+                    <div class="li-node-content">
+                      <div class="li-role-row">
+                        <h5 class="li-role-title">RTL Design, IP Integration &amp; SoC Signoff Intern</h5>
+                      </div>
+                      <div class="li-employment-type">Internship</div>
+                      <div class="li-date-range">Jul 2026 &bull; 1 mo</div>
+                      <div class="li-location">Agartala, Tripura, India &bull; On-site</div>
+                      <div class="li-skills-line">
+                        <i class="ri-vip-diamond-line"></i>
+                        <span>Verilog HDL, ModelSim, SDC Timing and +2 skills</span>
+                      </div>
+                    </div>
                   </div>
-                  <h2 class="work__year">2023-2027</h2>
-                </div>
 
-                <p class="work__description">
-                  Specializing in Autonomous UAV Flight Avionics, Embedded Systems, PCB Design &amp; Fabrication, Verilog RTL &amp; VLSI Design, and Robotics. AICTE Approved Institution.
-                </p>
-              </div>
-
-              <div class="work__card">
-                <div class="work__data">
-                  <div>
-                    <h1 class="work__title">
-                      Higher Secondary <br />
-                      (12th Science / PCM)
-                    </h1>
-                    <h3 class="work__subtitle">
-                      Tripura Board of Secondary Education
-                    </h3>
+                  <!-- Role 2 in Group -->
+                  <div class="li-timeline-node">
+                    <div class="li-node-bullet"></div>
+                    <div class="li-node-content">
+                      <div class="li-role-row">
+                        <h5 class="li-role-title">Android Development Intern</h5>
+                      </div>
+                      <div class="li-employment-type">Internship</div>
+                      <div class="li-date-range">Aug 2024 &bull; 1 mo</div>
+                      <div class="li-location">Agartala, Tripura, India &bull; On-site</div>
+                      <div class="li-skills-line">
+                        <i class="ri-vip-diamond-line"></i>
+                        <span>Java, Kotlin, Android SDK and +2 skills</span>
+                      </div>
+                    </div>
                   </div>
-                  <h2 class="work__year">2021-2023</h2>
                 </div>
-
-                <p class="work__description">
-                  Completed Higher Secondary in Physics, Chemistry, and Mathematics, building analytical thinking, calculus foundations, and scientific reasoning.
-                </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- SERVICES / CAPABILITIES -->
-      <section class="services section" id="services">
-        <h2 class="section__title">What I <span>Offer</span></h2>
+              <div class="li-divider"></div>
 
-        <div class="services__container container grid">
-          <!-- Card 1: Hardware & Embedded Systems -->
-          <div class="services__card services__close">
-            <div class="blob"></div>
+              <!-- Company 2: Drone Technology Intern (TIT) -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/tit.png" alt="TIT Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">TIT</div>
+                </div>
+                <div class="li-single-content">
+                  <h5 class="li-role-title">Drone Technology Intern</h5>
+                  <div class="li-company-line">Tripura Institute of Technology &bull; Internship</div>
+                  <div class="li-date-range">Jul 2025 &bull; 1 mo</div>
+                  <div class="li-location">Agartala, Tripura, India &bull; On-site</div>
+                  <div class="li-skills-line">
+                    <i class="ri-vip-diamond-line"></i>
+                    <span>ArduPilot, PX4 Autopilot, Telemetry Radios and +2 skills</span>
+                  </div>
+                </div>
+              </div>
 
-            <div class="services__data">
-              <h2 class="services__title">Hardware &amp; Embedded Systems</h2>
-              <p class="services__description">
-                End-to-end embedded product engineering from schematic conception to physical firmware realization and sensor integration.
-              </p>
-            </div>
+              <div class="li-divider"></div>
 
-            <div class="services__info">
-              <h3 class="services__subtitle">Core Technologies</h3>
+              <!-- Company 3: Drone Federation of India (DFI) -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/dfi.png" alt="DFI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">DFI</div>
+                </div>
+                <div class="li-single-content">
+                  <div class="li-role-row">
+                    <h5 class="li-role-title">NIDAR State Ambassador &amp; Regional Coordinator</h5>
+                    <span class="li-badge-present">Present</span>
+                  </div>
+                  <div class="li-company-line">Drone Federation of India (DFI) &bull; Leadership</div>
+                  <div class="li-date-range">2024 &ndash; Present &bull; 2 yrs</div>
+                  <div class="li-location">Tripura, India &bull; Regional Outreach</div>
+                  <div class="li-skills-line">
+                    <i class="ri-vip-diamond-line"></i>
+                    <span>UAV Aviation Outreach, Flight Arena Coordination and +2 skills</span>
+                  </div>
+                </div>
+              </div>
 
-              <ul class="services__skills">
-                <li class="services__skill">Embedded C</li>
-                <li class="services__skill">STM32</li>
-                <li class="services__skill">Arduino</li>
-                <li class="services__skill">ESP32</li>
-                <li class="services__skill">Sensor Fusion</li>
-                <li class="services__skill">PID Motor Control</li>
-                <li class="services__skill">I2C / SPI / UART</li>
-                <li class="services__skill">PWM Drivers</li>
-                <li class="services__skill">Analog Oscilloscopes</li>
-              </ul>
-            </div>
+              <div class="li-divider"></div>
 
-            <button class="services__button" aria-label="Toggle Skills">
-              <i class="ri-arrow-down-s-line"></i>
-            </button>
-          </div>
+              <!-- Company 4: Smart India Hackathon (SIH) -->
+              <div class="li-entry-single">
+                <div class="li-logo">
+                  <img src="assets/img/logos/sih.png" alt="SIH Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="li-logo-fallback" style="display:none;">SIH</div>
+                </div>
+                <div class="li-single-content">
+                  <h5 class="li-role-title">Smart India Hackathon (SIH) Event Head</h5>
+                  <div class="li-company-line">SIH Campus Committee &bull; Operations Lead</div>
+                  <div class="li-date-range">2026 &bull; 6 mos</div>
+                  <div class="li-location">Agartala, Tripura, India &bull; On-site</div>
+                  <div class="li-desc-bullet">
+                    &bull; Led technical operations and hardware setups for 20+ teams, evaluating embedded microcontroller architectures and rapid CAD prototyping.
+                  </div>
+                </div>
+              </div>
 
-          <!-- Card 2: Autonomous UAV & Flight Avionics -->
-          <div class="services__card services__close">
-            <div class="blob blob-2"></div>
-
-            <div class="services__data">
-              <h2 class="services__title">Autonomous UAV &amp; Avionics</h2>
-              <p class="services__description">
-                Drone system architecture, flight controller parameter tuning, autonomous waypoint navigation, telemetry, and FPV quadrotor dynamics.
-              </p>
-            </div>
-
-            <div class="services__info">
-              <h3 class="services__subtitle">Avionics Stack</h3>
-
-              <ul class="services__skills">
-                <li class="services__skill">ArduPilot</li>
-                <li class="services__skill">PX4 Autopilot</li>
-                <li class="services__skill">QGroundControl</li>
-                <li class="services__skill">Mission Planner</li>
-                <li class="services__skill">MAVLink Protocol</li>
-                <li class="services__skill">Telemetry Radios</li>
-                <li class="services__skill">Betaflight</li>
-                <li class="services__skill">FPV Aerodynamics</li>
-                <li class="services__skill">GPS Waypoint Missions</li>
-              </ul>
             </div>
 
-            <button class="services__button" aria-label="Toggle Skills">
-              <i class="ri-arrow-down-s-line"></i>
-            </button>
-          </div>
-
-          <!-- Card 3: PCB CAD & Hardware Fabrication -->
-          <div class="services__card services__close">
-            <div class="blob"></div>
-
-            <div class="services__data">
-              <h2 class="services__title">PCB CAD &amp; Fabrication</h2>
-              <p class="services__description">
-                Custom PCB schematic capture, routing, stackup design, chemical etching, SMD soldering, and benchtop signal validation.
-              </p>
-            </div>
-
-            <div class="services__info">
-              <h3 class="services__subtitle">EDA &amp; Tools</h3>
-
-              <ul class="services__skills">
-                <li class="services__skill">Autodesk Fusion 360</li>
-                <li class="services__skill">KiCAD</li>
-                <li class="services__skill">Schematic Capture</li>
-                <li class="services__skill">PCB Routing</li>
-                <li class="services__skill">Chemical Etching</li>
-                <li class="services__skill">SMD Soldering</li>
-                <li class="services__skill">Power Supply Design</li>
-                <li class="services__skill">Multimeter Testing</li>
-              </ul>
-            </div>
-
-            <button class="services__button" aria-label="Toggle Skills">
-              <i class="ri-arrow-down-s-line"></i>
-            </button>
-          </div>
-
-          <!-- Card 4: Silicon Architecture & VLSI -->
-          <div class="services__card services__close">
-            <div class="blob blob-2"></div>
-
-            <div class="services__data">
-              <h2 class="services__title">Silicon &amp; VLSI Design</h2>
-              <p class="services__description">
-                Digital logic modeling using Verilog HDL, automated behavioral testbenches, IP integration, and SoC signoff validation.
-              </p>
-            </div>
-
-            <div class="services__info">
-              <h3 class="services__subtitle">Design &amp; Signoff</h3>
-
-              <ul class="services__skills">
-                <li class="services__skill">Verilog HDL</li>
-                <li class="services__skill">ModelSim</li>
-                <li class="services__skill">RTL Architecture</li>
-                <li class="services__skill">Digital Logic</li>
-                <li class="services__skill">Testbenches</li>
-                <li class="services__skill">SoC Signoff</li>
-                <li class="services__skill">Timing Analysis</li>
-                <li class="services__skill">IP Integration</li>
-              </ul>
-            </div>
-
-            <button class="services__button" aria-label="Toggle Skills">
-              <i class="ri-arrow-down-s-line"></i>
-            </button>
           </div>
         </div>
       </section>
+
 
       <!-- WALL OF FAME (TICKER) -->
       <section class="testimonials section" id="fame">
@@ -1319,107 +974,110 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <!-- CONTACT & COLLABORATION -->
       <section class="contact section" id="contact">
         <div class="contact__container container grid">
           <div class="contact__data">
-            <h2 class="section__title">Contact <span>Me</span></h2>
+            <h2 class="section__title">Contact &amp; <span>Collaboration</span></h2>
 
-            <p class="contact__description">Tell me about your next project or collaboration.</p>
+            <p class="contact__description" style="font-size: 1.05rem; line-height: 1.6; max-width: 540px; margin-bottom: 1.5rem;">
+              Open to engineering opportunities, autonomous UAV systems development, custom PCB fabrication contracts, and embedded hardware research collaborations.
+            </p>
 
-            <button class="contact__button button" id="contact-btn">
+            <button class="contact__button button" id="contact-btn" type="button" title="Click to copy email address">
               Copy Email <i class="ri-file-copy-line"></i>
               <span class="contact__email" id="contact-email">manjitc.info@gmail.com</span>
             </button>
           </div>
 
-          <div class="contact__content grid">
-            <div class="contact__info grid">
+          <div class="contact__content grid" style="grid-template-columns: 1fr; gap: 2rem;">
+
+            <!-- Direct Details & Channels Row -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; background: hsl(240, 8%, 6%); padding: 1.75rem; border-radius: 1.5rem; border: 1px solid hsla(var(--hue), 60%, 64%, 0.2);">
               <div>
-                <h3 class="contact__title">Email</h3>
-                <address class="contact__address">
-                  manjitc.info@gmail.com
+                <h3 class="contact__title" style="color: var(--first-color-light); font-size: 0.95rem; margin-bottom: 0.4rem;"><i class="ri-mail-line"></i> Direct Email</h3>
+                <address class="contact__address" style="font-style: normal; color: var(--title-color);">
+                  <a href="mailto:manjitc.info@gmail.com" style="color: var(--title-color); transition: color 0.2s;">manjitc.info@gmail.com</a>
                 </address>
               </div>
 
               <div>
-                <h3 class="contact__title">Phone / WhatsApp</h3>
-                <address class="contact__address">
-                  +91 6009236698
+                <h3 class="contact__title" style="color: var(--first-color-light); font-size: 0.95rem; margin-bottom: 0.4rem;"><i class="ri-phone-line"></i> Phone / WhatsApp</h3>
+                <address class="contact__address" style="font-style: normal; color: var(--title-color);">
+                  <a href="tel:+916009236698" style="color: var(--title-color); transition: color 0.2s;">+91 6009236698</a>
                 </address>
               </div>
 
               <div>
-                <h3 class="contact__title">Location</h3>
-                <address class="contact__address">
+                <h3 class="contact__title" style="color: var(--first-color-light); font-size: 0.95rem; margin-bottom: 0.4rem;"><i class="ri-map-pin-line"></i> Location</h3>
+                <address class="contact__address" style="font-style: normal; color: var(--title-color);">
                   Agartala, Tripura, India
                 </address>
               </div>
+
+              <div>
+                <h3 class="contact__title" style="color: var(--first-color-light); font-size: 0.95rem; margin-bottom: 0.4rem;"><i class="ri-folder-open-line"></i> Credentials</h3>
+                <address class="contact__address" style="font-style: normal;">
+                  <a href="https://drive.google.com/drive/folders/1T63u9yf40P0OeprZwn_Tlkpkop6xnRs2?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: var(--first-color-light); font-weight: 600;">
+                    Master Google Drive Folder ↗
+                  </a>
+                </address>
+              </div>
             </div>
 
-            <div class="contact__social">
-              <h3 class="contact__title">Social Media</h3>
+            <!-- Message Composer Form & Direct Socials -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+              <form class="contact__form-card" id="contactForm">
+                <h3 style="font-size: 1.15rem; color: var(--title-color); display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="ri-send-plane-line" style="color: var(--first-color);"></i> Direct Message Composer
+                </h3>
+                <p style="font-size: 0.82rem; color: var(--text-color-light); line-height: 1.5; margin-top: -0.5rem;">
+                  Sends directly to my primary inbox with your subject and details pre-formatted.
+                </p>
 
-              <div class="contact__links">
-                <a
-                  href="https://www.linkedin.com/in/manjit-chakraborty"
-                  target="_blank"
-                  class="contact__link"
-                >
-                  LinkedIn
-                  <i class="ri-arrow-right-up-long-line"></i>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                  <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Jane Smith / Recruiter" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactSenderEmail">Your Email</label>
+                    <input type="email" id="contactSenderEmail" class="form-input" placeholder="name@company.com" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactSubject">Subject / Topic</label>
+                  <input type="text" id="contactSubject" class="form-input" placeholder="UAV Avionics Role / PCB Design Project" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage">Message / Project Scope</label>
+                  <textarea id="contactMessage" class="form-input" placeholder="Brief overview of the engineering opportunity, timeline, or scope..." required></textarea>
+                </div>
+
+                <button type="submit" class="button hero__btn-primary" style="justify-content: center; width: 100%; max-width: 280px;">
+                  Open In Email Client <i class="ri-mail-send-line"></i>
+                </button>
+              </form>
+
+              <!-- Social Links Bar -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; align-items: center;">
+                <a href="https://www.linkedin.com/in/manjit-chakraborty" target="_blank" rel="noopener noreferrer" class="projects__action-btn">
+                  <i class="ri-linkedin-fill"></i> LinkedIn Profile
                 </a>
-
-                <a
-                  href="https://github.com/manjit32987"
-                  target="_blank"
-                  class="contact__link"
-                >
-                  GitHub
-                  <i class="ri-arrow-right-up-long-line"></i>
+                <a href="https://github.com/manjit32987" target="_blank" rel="noopener noreferrer" class="projects__action-btn">
+                  <i class="ri-github-line"></i> GitHub Repositories
                 </a>
-
-                <a
-                  href="https://drive.google.com/drive/folders/1T63u9yf40P0OeprZwn_Tlkpkop6xnRs2?usp=sharing"
-                  target="_blank"
-                  class="contact__link"
-                >
-                  Google Drive Folder
-                  <i class="ri-arrow-right-up-long-line"></i>
+                <a href="https://wa.me/916009236698" target="_blank" rel="noopener noreferrer" class="projects__action-btn">
+                  <i class="ri-whatsapp-line"></i> WhatsApp Direct
+                </a>
+                <a href="Manjit_Chakraborty_Resume.pdf" download="Manjit_Chakraborty_Resume.pdf" class="projects__action-btn" style="border-color: var(--first-color); color: var(--first-color-light);">
+                  <i class="ri-download-2-line"></i> Download Resume (PDF)
                 </a>
               </div>
             </div>
 
-            <div class="contact__write">
-              <h3 class="contact__title">Write Me &amp; We'll Talk</h3>
-
-              <div class="contact__links">
-                <a
-                  href="https://wa.me/916009236698"
-                  target="_blank"
-                  class="contact__link"
-                >
-                  WhatsApp
-                  <i class="ri-arrow-right-up-long-line"></i>
-                </a>
-
-                <a
-                  href="mailto:manjitc.info@gmail.com"
-                  class="contact__link"
-                >
-                  Direct Email
-                  <i class="ri-arrow-right-up-long-line"></i>
-                </a>
-
-                <a
-                  href="tel:+916009236698"
-                  class="contact__link"
-                >
-                  Phone Call
-                  <i class="ri-arrow-right-up-long-line"></i>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1430,7 +1088,7 @@
       <div class="blob-animate"></div>
 
       <div class="footer__copy">
-        All Rights Reserved By <span>Manjit Chakraborty</span>
+        All Rights Reserved By <span>Manjit Chakraborty</span> &bull; Electronics &amp; Communication Engineer
       </div>
 
       <div class="footer__year">
@@ -1438,6 +1096,9 @@
         <span id="footer-year">2026</span>
       </div>
     </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-msg" id="toastMsg" aria-live="polite"></div>
 
     <!-- LIGHTBOX PREVIEW MODAL -->
     <div class="modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate Image Preview">
@@ -1450,12 +1111,22 @@
         </div>
         <div class="modal__details">
           <h3 class="modal__title" id="modalTitle">Certificate Preview</h3>
-          <a href="#" target="_blank" class="modal__link" id="modalDriveLink">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="modal__link" id="modalDriveLink">
             Open in Google Drive <i class="ri-external-link-line"></i>
           </a>
         </div>
       </div>
     </div>
+
+    <!-- CASE STUDY DETAIL MODAL -->
+    <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-label="Project Case Study Detail">
+      <div class="case-modal__box">
+        <div class="case-modal__close" id="caseModalClose" title="Close"><i class="ri-close-line"></i></div>
+        <h2 id="caseModalTitle" style="color: var(--first-color-light); margin-bottom: 1.25rem;"></h2>
+        <div id="caseModalBody"></div>
+      </div>
+    </div>
+
 
     <!-- SCROLLREVEAL -->
     <script src="assets/js/scrollreveal.min.js"></script>
